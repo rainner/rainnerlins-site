@@ -1,0 +1,72 @@
+/**
+ * Sass entry file.
+ */
+@import "./variables";
+@import "./mixins";
+@import "./fonts";
+@import "./reset";
+@import "./common";
+@import "./animations";
+@import "./loader";
+@import "./flexbox";
+@import "./fontello";
+@import "./images";
+@import "./forms";
+@import "./type";
+@import "./notify";
+@import "./slideshow";
+@import "./dropdown";
+@import "./tooltip";
+@import "./header";
+@import "./hero";
+@import "./content";
+@import "./services";
+@import "./techlist";
+@import "./projects";
+@import "./footer";
+@import "./modifiers";
+
+// app container
+#app {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+}
+
+// back-to-top scroller btn
+#btt {
+  display: block;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX( -50% );
+  z-index: 999;
+
+  &.visible {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  button {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 120%;
+    width: 2em;
+    height: 2em;
+    line-height: 1em;
+    border-radius: 100px;
+    background-color: lighten( $colorDocument, 10% );
+    color: $colorDocumentText;
+    box-shadow: $shadowBold;
+
+    &:hover {
+      background-color: lighten( $colorDocument, 20% );
+    }
+    &:active {
+      background-color: darken( $colorDocument, 10% );
+    }
+  }
+}

@@ -1,0 +1,98 @@
+/**
+ * Page notification alerts.
+ */
+@keyframes notifyShow {
+    0% { transform: translateY( 20px ) scale( 0.8 ); opacity: 0; }
+  100% { transform: translateY( 0 ) scale( 1 ); opacity: 1; }
+}
+@keyframes notifyRemove {
+    0% { transform: scale( 1 ); opacity: 1; }
+  100% { transform: scale( 0.8 ); opacity: 0; }
+}
+
+.notify-wrap {
+  display: block;
+  position: fixed;
+  pointer-events: none;
+  transition: none;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  bottom: $padSpace;
+  z-index: $zindexAlerts;
+
+  &.enabled {
+    pointer-events: auto;
+  }
+
+  .notify-alert {
+    display: block;
+    position: relative;
+    margin: 0 $padSpace $padSpace $padSpace;
+    padding: $padSpace;
+    line-height: 1.2em;
+    background-color: $colorDefault;
+    color: $colorDefaultText;
+    border-radius: $lineJoin;
+    box-shadow: $shadowBold;
+    animation: notifyShow $fxSpeed $fxEaseBounce forwards;
+
+    @media #{$screenMedium} {
+      margin: 0 auto $padSpace auto;
+      width: calc( 100vw - 20% );
+      max-width: $sizeMedium;
+    }
+
+    &.notify-closed {
+      animation: notifyRemove $fxSpeed $fxEase forwards;
+    }
+    &.notify-success {
+      background-color: $colorSuccess;
+      color: $colorSuccessText;
+    }
+    &.notify-warning {
+      background-color: $colorWarning;
+      color: $colorWarningText;
+    }
+    &.notify-error {
+      background-color: $colorDanger;
+      color: $colorDangerText;
+    }
+    &.notify-info {
+      background-color: $colorInfo;
+      color: $colorInfoText;
+    }
+
+    .notify-message {
+      font-weight: normal;
+    }
+
+    .notify-close {
+      display: inline-block;
+      position: absolute;
+      cursor: pointer;
+      text-align: center;
+      top: -10px;
+      right: -10px;
+      width: 2em;
+      height: 2em;
+      line-height: 2em;
+      padding: 0;
+      color: darken( $colorBright, 40% );
+      background-color: $colorBright;
+      border-radius: 100px;
+      box-shadow: $shadowPaper;
+
+      &:before {
+        display: inline-block;
+        font-family: 'fontello';
+        content: '\e802';
+      }
+      &:hover {
+        color: darken( $colorBright, 50% );
+        background-color: darken( $colorBright, 10% );
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+
+// animations on
+.fx-on {
+  animation-direction: normal;
+  animation-duration: $fxSpeed;
+  animation-timing-function: $fxEase;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+// effect delays
+.fx-delay-1 {
+  animation-delay: calc( #{$fxSpeed} - 200ms * 1 );
+}
+.fx-delay-2 {
+  animation-delay: calc( #{$fxSpeed} - 200ms * 2 );
+}
+.fx-delay-3 {
+  animation-delay: calc( #{$fxSpeed} - 200ms * 3 );
+}
+
+// spin right animation
+@keyframes spinRight {
+    0% { transform: rotate( 0deg ); }
+  100% { transform: rotate( 359deg ); }
+}
+.fx-spin-right {
+  animation-name: spinRight;
+}
+
+// spin right animation
+@keyframes spinRight {
+    0% { transform: rotate( 0deg ); }
+  100% { transform: rotate( 359deg ); }
+}
+.fx-spin-right {
+  animation-name: spinRight;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+// spin right animation
+@keyframes spinLeft {
+    0% { transform: rotate( 359deg ); }
+  100% { transform: rotate( 0deg ); }
+}
+.fx-spin-left {
+  animation-name: spinLeft;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+// fade-in animation
+@keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.fx-fade-in {
+  opacity: 0;
+  animation-name: fadeIn;
+}
+
+// fade-out animation
+@keyframes fadeOut {
+    0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.fx-fade-out {
+  opacity: 1;
+  animation-name: fadeOut;
+}
+
+// drop-in animation (scale)
+@keyframes dropIn {
+    0% { opacity: 0; transform: scale( 1.5 ); }
+  100% { opacity: 1; transform: scale( 1 ); }
+}
+.fx-drop-in {
+  animation-name: dropIn;
+}
+
+// zoom-in animation (modal, alert, etc)
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale( 0.8 ); }
+  100% { opacity: 1; transform: scale( 1 ); }
+}
+.fx-zoom-in {
+  animation-name: zoomIn;
+}
+
+// fade-out animation (modal, alert, etc)
+@keyframes zoomOut {
+    0% { opacity: 1; transform: scale( 1 ); }
+  100% { opacity: 0; transform: scale( 0.8 ); }
+}
+.fx-zoom-out {
+  animation-name: zoomOut;
+}
+
+// slide in to the left
+@keyframes slideLeft {
+    0% { opacity: 0; transform: translateX( 300px ); }
+  100% { opacity: 1; transform: translateX( 0 ); }
+}
+.fx-slide-left {
+  animation-name: slideLeft;
+}
+
+// slide in to the right
+@keyframes slideRight {
+    0% { opacity: 0; transform: translateX( -300px ); }
+  100% { opacity: 1; transform: translateX( 0 ); }
+}
+.fx-slide-right {
+  animation-name: slideRight;
+}
+
+// slide in to the top
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY( 300px ); }
+  100% { opacity: 1; transform: translateY( 0 ); }
+}
+.fx-slide-up {
+  animation-name: slideUp;
+}
+
+// slide in to the bottom
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY( -300px ); }
+  100% { opacity: 1; transform: translateY( 0 ); }
+}
+.fx-slide-down {
+  animation-name: slideDown;
+}

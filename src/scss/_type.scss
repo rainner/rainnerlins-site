@@ -1,0 +1,156 @@
+// links
+a {
+  text-decoration: none;
+  color: $colorPrimary;
+
+  &:hover {
+    color: darken( $colorPrimary, 8% );
+  }
+}
+
+// paragraphs
+p {
+  margin-bottom: $padSpace;
+}
+* > p:last-of-type {
+  margin-bottom: 0;
+}
+
+// horizontal lines
+hr {
+  display: block;
+  margin: ( $padSpace * 2 ) 0;
+  border: 0;
+  border-top: $lineWidth $lineStyle $lineColor;
+}
+
+// original headings
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  padding: 0;
+  line-height: 1.2em;
+  font-weight: normal;
+}
+h1 { font-size: 240%; letter-spacing: -3px; }
+h2 { font-size: 210%; letter-spacing: -2px; }
+h3 { font-size: 180%; letter-spacing: -1px; }
+h4 { font-size: 150%; }
+h5 { font-size: 120%; }
+h6 { font-size: 100%; }
+
+// common headings
+.heading {
+  display: block;
+  margin: 0 0 25px 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+// badge text containers
+.text-badge {
+  display: inline-block;
+  padding: 0 .5em;
+  background-color: rgba( 0, 0, 0, 0.1 );
+  border-radius: 100px;
+}
+
+// pill style wrappers for text elements
+.text-pill {
+  display: inline-block;
+  font-size: 80%;
+  line-height: 1.2em;
+  padding: .2em .6em;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  background: $colorBright linear-gradient( 180deg, transparent, rgba(0,0,0,0.2) );
+  color: $colorBrightText;
+  border-radius: 100px;
+  box-shadow: $shadowPaper;
+}
+
+// text display styles
+.text-reset {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.5em;
+  text-transform: none;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+.text-top {
+  vertical-align: top;
+}
+.text-middle {
+  vertical-align: middle;
+}
+.text-bottom {
+  vertical-align: bottom;
+}
+.text-baseline {
+  vertical-align: baseline;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-bold {
+  font-weight: bold;
+}
+.text-shadow {
+  text-shadow: $shadowText;
+}
+.text-nowrap {
+  @include textNoWrap;
+}
+.text-clip {
+  @include textClip;
+}
+.text-noselect {
+  @include textNoSelect;
+}
+.text-flip {
+  text-align: left;
+  direction: rtl;
+}
+.text-faded {
+  opacity: 0.5;
+}
+.text-big {
+  font-size: 140%;
+}
+.text-bigger {
+  font-size: 200%;
+}
+.text-huge {
+  font-size: 300%;
+}
+.text-small {
+  font-size: 90%;
+  line-height: 1.8em;
+}
+.text-smaller {
+  font-size: 80%;
+  line-height: 1.6em;
+}
+.text-tiny {
+  font-size: 60%;
+  line-height: 1.5em;
+}
+

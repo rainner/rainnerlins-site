@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Websites",
+    "description": "Start from scratch or convert your outdated website into a modern web 2.0 website that works on mobile and desktop devices making use of the latest technologies browsers have to offer.",
+    "icon": "icon-code",
+    "image": "public/images/srv-websites.png",
+    "examples": [
+      "Custom static templates, layouts &amp; themes.",
+      "Conversion of graphic design into working template.",
+      "Templates &amp; themes for existing CMS software.",
+      "User interfaces &amp; admin panels."
+    ]
+  },
+  {
+    "name": "Integrations",
+    "description": "Bring exciting and new open-source third-party services to your existing web application by integrating them using API technology.",
+    "icon": "icon-puzzle",
+    "image": "public/images/srv-integrations.png",
+    "examples": [
+      "Social media related widgets & functionality.",
+      "Remote data storage & backup related services.",
+      "Tracking, marketing & analytics.",
+      "Payment gateways & processing."
+    ]
+  },
+  {
+    "name": "Servers",
+    "description": "Web applications are useless without a dedicated and reliable place to host them from that is secure and has all the capabilities your app needs.",
+    "icon": "icon-database",
+    "image": "public/images/srv-servers.png",
+    "examples": [
+      "Hosting, domain & DNS configuration.",
+      "E-mail routing and delivery system.",
+      "Database, file storage & caching.",
+      "Security, firewall & spam filtering."
+    ]
+  },
+  {
+    "name": "Automation",
+    "description": "If you find yourself repeating the same tasks everyday on new data as part of your workday, there might be a way to use scripts and services to automate these tasks so you have more free time to do something else.",
+    "icon": "icon-download",
+    "image": "public/images/srv-automation.png",
+    "examples": [
+      "Data parsing, importing & exporting.",
+      "Custom backend CMS for your data.",
+      "Batch file & list processing.",
+      "Subscriptions & notifications."
+    ]
+  }
+]

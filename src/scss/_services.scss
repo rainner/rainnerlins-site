@@ -1,0 +1,35 @@
+/**
+ * Services section
+ */
+.services-wrap {
+
+  ul.services-tips {
+    display: none;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: stretch;
+    margin-top: ( $padSpace * 4 );
+    border-top: $borderDefault;
+    text-align: center;
+
+    & > li {
+      flex: 1;
+      padding-top: $padSpace;
+      margin-right: $padSpace;
+      padding-right: $padSpace;
+      border-right: $borderDefault;
+
+      &:last-of-type {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
+
+    @media #{$screenMedium} {
+      display: flex;
+    }
+  }
+}

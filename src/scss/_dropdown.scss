@@ -1,0 +1,110 @@
+/**
+ * Dropdown styles
+ */
+@keyframes dropSlideUp {
+    0% { transform: translateY( 20px ); opacity: 0.000000001; }
+  100% { transform: translateY( 0 ); opacity: 1; }
+}
+@keyframes dropSlideDown {
+    0% { transform: translateY( -20px ); opacity: 0.000000001; }
+  100% { transform: translateY( 0 ); opacity: 1; }
+}
+
+.dropdown-menu {
+  display: block;
+  overflow: visible;
+  position: relative;
+
+  & > .dropdown-trigger {
+    display: inline-block;
+    cursor: pointer;
+
+    // fontello glyph : icon-menu
+    &:before {
+      content: '\f0c9';
+    }
+  }
+
+  // change fontello glyph when visible : icon-close
+  &.visible > .dropdown-trigger:before {
+    content: '\e802';
+  }
+
+  & > .dropdown-content {
+    display: none;
+    position: absolute;
+    transition: none;
+    opacity: 0.000000001;
+    margin: 0;
+    padding: $padSpace 0;
+    min-width: 200px;
+    max-width: 400px;
+    border-left: $lineWidth $lineStyle $lineColor;
+    background-color: lighten( $colorDocument, 8% );
+    border-radius: $lineJoin;
+    box-shadow: $shadowBold;
+    z-index: $zindexModals;
+
+    &.left { // show from left
+      left: 0;
+      right: auto;
+    }
+    &.right { // show from right
+      left: auto;
+      right: 0;
+    }
+    &.top { // show from top
+      top: 90%;
+      bottom: auto;
+      animation: dropSlideUp $fxSpeed $fxEaseBounce forwards;
+    }
+    &.bottom { // show from bottom
+      top: auto;
+      bottom: 90%;
+      animation: dropSlideDown $fxSpeed $fxEaseBounce forwards;
+    }
+
+    // list inside dropdown content container
+    .dropdown-list {
+      display: block;
+      list-style: none;
+
+      & > li {
+        @include textNoWrap;
+        margin: 0;
+        padding: 0;
+
+        &.title {
+          font-size: 80%;
+          line-height: 1.8em;
+          text-transform: uppercase;
+          padding: ( $padSpace / 2 ) ( $padSpace * 1.5 );
+          opacity: 0.4;
+        }
+
+        &.spacer {
+          height: 1em;
+          background-color: rgba(0,0,0,0.05);
+        }
+
+        & > a {
+          display: block;
+          padding: ( $padSpace / 2 ) ( $padSpace * 2 );
+          line-height: 1.2em;
+          background-color: rgba(0,0,0,0);
+          color: $colorDocumentText;
+
+          &:hover {
+            background-color: rgba(0,0,0,0.2);
+            color: darken( $colorDocumentText, 8% );
+          }
+        }
+      }
+    }
+  }
+
+  // make dropdown visible
+  &.visible > .dropdown-content {
+    display: block;
+  }
+}

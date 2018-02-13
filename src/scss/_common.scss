@@ -1,0 +1,117 @@
+
+// cursor for clickable elements
+.clickable, [clickable] {
+  cursor: pointer;
+}
+
+// not rendered
+.hidden, [hidden] {
+  display: none;
+}
+
+// visible but not usable
+.disabled, [disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// rendered but not visible or usable
+.cloaked, [cloaked], [v-cloak] {
+  pointer-events: none;
+  opacity: 0.0000000000001;
+}
+
+//checklist
+ul.checklist {
+  display: block;
+  list-style: none;
+
+  & > li {
+    display: block;
+    position: relative;
+    margin: 0 0 0 $padSpace;
+    padding: ( $padSpace / 2 ) 0 ( $padSpace / 2 ) 1.5em;
+    font-size: 90%;
+    line-height: 1.2em;
+    color: darken( $colorDocumentText, 20% );
+
+    &:before {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: .6em;
+      line-height: 1em;
+      font-family: 'fontello';
+      content: '\e801';
+      color: $colorSecondary;
+    }
+  }
+}
+
+// common margins
+.push-top {
+  margin-top: ( $padSpace * 3 );
+}
+.push-right {
+  margin-right: ( $padSpace * 3 );
+}
+.push-bottom {
+  margin-bottom: ( $padSpace * 3 );
+}
+.push-left {
+  margin-left: ( $padSpace * 3 );
+}
+.push-vetical {
+  margin-top: ( $padSpace * 3 );
+  margin-bottom: ( $padSpace * 3 );
+}
+.push-horizontal {
+  margin-left: ( $padSpace * 3 );
+  margin-right: ( $padSpace * 3 );
+}
+.push-all {
+  margin: ( $padSpace * 3 );
+}
+
+// common paddings
+.pad-top {
+  padding-top: $padSpace;
+}
+.pad-right {
+  padding-right: $padSpace;
+}
+.pad-bottom {
+  padding-bottom: $padSpace;
+}
+.pad-left {
+  padding-left: $padSpace;
+}
+.pad-vetical {
+  padding-top: $padSpace;
+  padding-bottom: $padSpace;
+}
+.pad-horizontal {
+  padding-left: $padSpace;
+  padding-right: $padSpace;
+}
+.pad-all {
+  padding: $padSpace;
+}
+
+// common borders
+.border-top {
+  border-top: $lineWidth $lineStyle $lineColor;
+}
+.border-right {
+  border-right: $lineWidth $lineStyle $lineColor;
+}
+.border-bottom {
+  border-bottom: $lineWidth $lineStyle $lineColor;
+}
+.border-left {
+  border-left: $lineWidth $lineStyle $lineColor;
+}
+.border-all {
+  border: $lineWidth $lineStyle $lineColor;
+}
+

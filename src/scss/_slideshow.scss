@@ -1,0 +1,107 @@
+/**
+ * Slideshow styles
+ */
+.slideshow-wrap {
+  display: block;
+  position: relative;
+
+  .slideshow-nav,
+  .slideshow-back,
+  .slideshow-next {
+    display: block;
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+
+    button {
+      display: inline-block;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      width: 2em;
+      height: 2em;
+      line-height: 1em;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 100px;
+      box-shadow: $shadowPaper;
+
+      &:hover {
+        background-color: rgba(255,255,255,0.2);
+      }
+      &:before {
+        font-family: 'fontello';
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+      }
+    }
+  }
+
+  .slideshow-nav {
+    left: 0;
+    top: 100%;
+    width: 100%;
+
+    button {
+      margin: 0 .5em;
+      width: 1em;
+      height: 1em;
+
+      &.active {
+        background-color: $colorPrimary;
+        border-color: lighten( $colorPrimary, 10% );
+      }
+    }
+  }
+
+  .slideshow-back {
+    left: 0;
+    right: auto;
+    top: 40%;
+    pointer-events: none;
+    opacity: 0;
+
+    button:before {
+      display: inline-block;
+      width: 1em;
+      content: '\e840';
+    }
+  }
+
+  .slideshow-next {
+    left: auto;
+    right: 0;
+    top: 40%;
+    pointer-events: none;
+    opacity: 0;
+
+    button:before {
+      display: inline-block;
+      width: 1em;
+      content: '\e836';
+    }
+  }
+
+  &:hover .slideshow-back,
+  &:hover .slideshow-next {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .slideshow-list {
+    display: block;
+    position: relative;
+    list-style: none;
+    z-index: 1;
+
+    .slideshow-item {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+
+}

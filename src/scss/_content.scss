@@ -1,0 +1,79 @@
+
+// common inner container
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 0 $padSpace;
+  width: 100%;
+
+  @media #{$screenMedium} {
+    padding: 0;
+    width: 92%;
+  }
+  @media #{$screenLarge} {
+    max-width: $sizeLarge;
+  }
+}
+
+// common app content sections
+.content-wrap {
+  display: block;
+  position: relative;
+
+  // container tweaks
+  .container {
+    position: relative;
+    padding-top: 4em ;
+    padding-bottom: 5em;
+    z-index: 2;
+  }
+
+  // skewed backgrounds
+  &.content-skew {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      transition: none;
+      outline: 1px solid transparent;
+      left: -300px;
+      right: -300px;
+      top: 0;
+      height: 100%;
+      z-index: 1;
+    }
+    &:before {
+      background-color: darken( $colorDocument, 6% );
+      transform: rotate( -4deg );
+    }
+    &:after {
+      background-color: $colorDocument;
+      background-image: radial-gradient( circle at center, lighten( $colorDocument, 8% ) 0, transparent 40% );
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      transform: rotate( 4deg );
+      box-shadow: 0 0 14px rgba(0,0,0,0.3);
+    }
+    @media #{$screenMedium} {
+      &:before { transform: rotate( -3deg ); }
+      &:after { transform: rotate( 3deg ); }
+    }
+    @media #{$screenLarge} {
+      &:before { transform: rotate( -2deg ); }
+      &:after { transform: rotate( 2deg ); }
+    }
+
+  }
+
+  // dark backgrounds
+  &.content-dark {
+    background-color: darken( $colorDocument, 10% );
+
+    // container tweaks
+    .container {
+      padding-top: 5em ;
+      padding-bottom: 5em;
+    }
+  }
+}

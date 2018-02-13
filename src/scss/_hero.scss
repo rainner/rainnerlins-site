@@ -1,0 +1,39 @@
+/**
+ * Hero section
+ */
+.hero-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: darken( $colorDocument, 10% );
+  color: $colorDocumentText;
+
+  .hero-content {
+    position: relative;
+
+    .hero-title {
+      font-size: 240%;
+      line-height: 1em;
+      margin: 0 0 .6em 0;
+      text-shadow: $shadowText;
+    }
+    .hero-info {
+      font-size: 120%;
+      line-height: 1.5em;
+      margin: 0 0 2em 0;
+      color: darken( $colorDocumentText, 12% );
+      text-shadow: $shadowText;
+    }
+
+    @media #{$screenMedium} {
+      .hero-title { font-size: 280%; letter-spacing: -3px; }
+      .hero-info { font-size: 130%; }
+    }
+    @media #{$screenLarge} {
+      .hero-title { font-size: 300%; letter-spacing: -4px; }
+      .hero-info { font-size: 140%; }
+    }
+  }
+}

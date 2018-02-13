@@ -1,0 +1,102 @@
+// height of topbar
+$topbarHeight: 4em;
+
+// spacing and padding
+$padSpace: 1em;
+$colSpace: 1.0em;
+$rowSpace: 1.2em;
+$listSpace: 0.4em;
+
+// borders and lines
+$lineWidth: 2px;
+$lineStyle: solid;
+$lineColor: rgba( 255, 255, 255, 0.04 );
+$lineJoin: 3px;
+
+// common border styles
+$borderDefault: $lineWidth $lineStyle $lineColor;
+$borderDark: $lineWidth $lineStyle rgba( 0, 0, 0, 0.1 );
+
+// common z-index values
+$zindexUnder: -1;
+$zindexElements: 100;
+$zindexModals: 8888;
+$zindexAlerts: 9999;
+
+// base font options
+$fontSize: 20px;
+$fontFamily: 'Capriola', 'Helvetica', 'Arial', sans-serif;
+$fontFixed: Consolas, "Andale Mono", Monaco, "Courier New", monospace;
+
+// document colors
+$colorDocument: #24293f;
+$colorDocumentText: #e0e8ec;
+
+// input colors
+$colorInput: #f0f0f0;
+$colorInputText: #302040;
+
+// default colors
+$colorDefault: #afb5b7;
+$colorDefaultText: darken( $colorDefault, 50% );
+
+// primary colors
+$colorPrimary: #8083ca;
+$colorPrimaryText: lighten( $colorPrimary, 40% );
+
+// secondary colors
+$colorSecondary: #a93455;
+$colorSecondaryText: lighten( $colorSecondary, 45% );
+
+// success colors
+$colorSuccess: #4c7156;
+$colorSuccessText: lighten( $colorSuccess, 45% );
+
+// warning colors
+$colorWarning: #a09069;
+$colorWarningText: lighten( $colorWarning, 40% );
+
+// warning colors
+$colorDanger: #9a2638;
+$colorDangerText: lighten( $colorDanger, 50% );
+
+// warning colors
+$colorInfo: #29567b;
+$colorInfoText: lighten( $colorInfo, 50% );
+
+// grey colors
+$colorGrey: darken( $colorDocumentText, 20% );
+$colorGreyText: darken( $colorGrey, 40% );
+
+// bright colors
+$colorBright: #ffffff;
+$colorBrightText: darken( $colorBright, 40% );
+
+// base page colors
+$colorText: #404050;
+$colorBg: darken( $colorDocument, 10% );
+$colorOverlay: rgba( 0, 0, 0, 0.6);
+
+// common shadow styles
+$shadowHollow: inset 0 1px 4px rgba( 0, 0, 0, 0.15 );
+$shadowBubble: inset 0 -20px 20px rgba( 0, 0, 0, 0.1 );
+$shadowPaper: 0 1px 2px rgba( 0, 0, 0, 0.4 );
+$shadowDark: 0 1px 3px rgba( 0, 0, 0, 0.8 );
+$shadowGlow: 0 0 10px rgba( 0, 0, 0, 0.5 );
+$shadowBold: 0 2px 12px rgba( 0, 0, 0, 0.6 );
+$shadowText: 1px 1px 1px rgba( 0, 0, 0, 0.5 );
+
+// common speed for most small ui transition animations
+$fxSpeed: 400ms;
+$fxEase: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+$fxEaseBounce: cubic-bezier( 0.640, -0.280, 0.050, 1.405 );
+
+// screen sizes
+$sizeSmall: 420px;
+$sizeMedium: 720px;
+$sizeLarge: 1280px;
+
+// screen breakpoints
+$screenSmall: "only screen and (min-width : #{$sizeSmall})";
+$screenMedium: "only screen and (min-width : #{$sizeMedium})";
+$screenLarge: "only screen and (min-width : #{$sizeLarge})";

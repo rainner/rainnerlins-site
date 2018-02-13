@@ -1,21 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Rainner Lins</title>
-  <meta charset="UTF-8" />
-  <meta http-equiv="x-ua-compatible" content="IE=Edge, chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="description" id="description" content="Rainner Lins | Freelance web developer for hire." />
-  <meta name="author" content="Rainner Lins | @raintek_ | https://rainnerlins.com | https://github.com/rainner" />
-  <meta name="copyright" content="&copy; All Rights Reserved" />
-  <link rel="stylesheet" href="public/bundles/styles.min.css" />
-</head>
-<body>
+  <head>
 
-  <div class="container">
-    <h1>Page Heading</h1>
-  </div>
+    <!--  app metadata  -->
+    <title>Rainner Lins</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=Edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" id="description" content="Rainner Lins | Freelance web developer for hire." />
+    <meta name="author" content="Rainner Lins | @raintek_ | https://rainnerlins.com | https://github.com/rainner" />
+    <meta name="copyright" content="&copy; Rainner Lins - All Rights Reserved" />
+    <meta name="google-site-verification" content="eRf3a7ab4J2Dyo4HG-5ibvN-q8IH9YvQ4kUjoPgbprU" />
 
-  <script src="public/bundles/scripts.min.css"></script>
-</body>
+    <!-- open graph -->
+    <meta property="og:image" content="https://rainnerlins.com/public/images/avatar.jpg" />
+    <meta property="og:site_name" content="Rainner Lins Site" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Web Developer | Rainner Lins" />
+    <meta property="og:url" content="https://rainnerlins.com/" />
+    <meta property="og:description" content="I'm a programmer and user-interface developer who builds things for the web, also known as a web developer." />
+
+    <!-- initial style to get a spinner going before anything else starts loading -->
+    <style type="text/css">
+      @keyframes _spin { 0% { transform: rotate( 0deg ); } 100% { transform: rotate( 359deg ); } }
+      body { display: block; position: relative; min-height: 100vh; background-color: #24293f; color: #e0e8ec; }
+      #spinner { display: block; position: fixed; text-align: center; left: 50%; top: 50%; width: 100px; height: 100px; margin: -50px 0 0 -50px; z-index: 9999; animation: _spin 2s linear infinite; }
+    </style>
+
+    <!-- app icon and styles -->
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="public/bundles/app.min.css" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-854018-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag( 'js', new Date() );
+      gtag( 'config', 'UA-854018-2' );
+    </script>
+
+  </head>
+  <body id="doc">
+
+    <!-- initial spinner -->
+    <div id="spinner">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <g><path d="M50 15A35 35 0 1 0 74.787 25.213" fill="none" stroke="#e0e8ec" stroke-width="10"></path><path d="M49 3L49 27L61 15L49 3" fill="#e0e8ec"></path></g>
+      </svg>
+    </div>
+
+    <!-- outer container -->
+    <div id="app" style="opacity: 0">
+
+      <!-- header section -->
+      <header id="header" class="header-wrap">
+        <div class="container">
+          <div class="header-row flex-row flex-middle flex-space">
+            <div class="header-logo">
+              <a class="icon-code iconLeft logo-link" href="/">Rainner<b>Lins</b></a>
+            </div>
+            <div class="header-menu dropdown-menu">
+              <button class="dropdown-trigger icon-menu clickable"></button>
+              <div class="dropdown-content">
+                <ul class="dropdown-list">
+                  <li class="title">Internal</li>
+                  <li><a class="icon-home iconLeft" href="#hero" data-scroll="#hero">Home</a></li>
+                  <li><a class="icon-list iconLeft" href="#services" data-scroll="#services">Services</a></li>
+                  <li><a class="icon-html5 iconLeft" href="#technologies" data-scroll="#technologies">Technologies</a></li>
+                  <li><a class="icon-design iconLeft" href="#projects" data-scroll="#projects">Projects</a></li>
+                  <li><a class="icon-mail iconLeft" href="#contact" data-scroll="#contact">Contact</a></li>
+                  <li class="title">External</li>
+                  <li><a class="icon-ghub iconLeft" href="#" data-action="go:github">Github</a></li>
+                  <li><a class="icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen</a></li>
+                  <li><a class="icon-twtr iconLeft" href="#" data-action="go:twitter">Twitter</a></li>
+                  <li><a class="icon-at iconLeft contact-link" href="mailto:info@rainnerlins.com">Email</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- hero intro section with text and cta -->
+      <section id="hero" class="hero-wrap bg-img bg-img-fixed" style="background-image: url( 'public/images/hero-bg.jpg' );">
+        <div class="container">
+          <div class="hero-content text-center">
+            <h1 class="hero-title">Web Developer</h1>
+            <p class="hero-info">Hello, my name is Rainner. I'm a programmer and user-interface developer who builds things for use on the world-wide-web, also known as a web developer.</p>
+            <button class="form-btn bg-secondary-hover text-nowrap" data-scroll="#services">&nbsp; <i class="icon-down-open"></i> &nbsp; Explore &nbsp;</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- content section -->
+      <section id="services" class="services-wrap content-wrap content-skew">
+        <div class="container">
+          <div id="services-loader" class="loader">Loading list of services...</div>
+          <div id="services-slideshow" class="slideshow-wrap hidden">
+            <div class="slideshow-back"></div>
+            <div class="slideshow-next"></div>
+            <div class="slideshow-nav"></div>
+            <div class="slideshow-list"></div>
+          </div>
+          <ul class="services-tips">
+            <li class="icon-laptop iconTop iconLarge iconBright text-grey">
+              Single apps that are responsive and work across many devices and platforms.
+            </li>
+            <li class="icon-gauge iconTop iconLarge iconBright text-grey">
+              Lightweight and highly optimized apps that load fast and work fast on all devices.
+            </li>
+            <li class="icon-search iconTop iconLarge iconBright text-grey">
+              Search optimized apps that get a higher grade by popular search engines.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- content section -->
+      <section id="technologies" class="techlist-wrap content-wrap content-dark bg-img bg-img-bottom bg-img-fixed" data-image="public/images/techlist-bg.jpg">
+
+        <div class="container">
+          <h2 class="heading">Technologies</h2>
+          <div class="pad-bottom">List of commonly used tools and technologies that help me get the job done.</div>
+          <div class="techlist-icons push-bottom">
+            <a class="icon-nodejs iconTop iconMedium" href="https://nodejs.org/en/" target="_blank">Node</a>
+            <a class="icon-gulp iconTop iconMedium" href="https://gulpjs.com/" target="_blank">Gulp</a>
+            <a class="icon-webpack iconTop iconMedium" href="https://webpack.js.org/" target="_blank">Webpack</a>
+            <a class="icon-babel iconTop iconMedium" href="https://babeljs.io/" target="_blank">Babel</a>
+            <a class="icon-sass iconTop iconMedium" href="https://sass-lang.com/" target="_blank">Sass</a>
+            <a class="icon-css3 iconTop iconMedium" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3" target="_blank">CSS3</a>
+            <a class="icon-html5 iconTop iconMedium" href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" target="_blank">HTML5</a>
+            <a class="icon-bootstrap iconTop iconMedium" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+            <a class="icon-php iconTop iconMedium" href="https://secure.php.net/" target="_blank">PHP</a>
+            <a class="icon-mysql iconTop iconMedium" href="https://www.mysql.com/" target="_blank">MySQL</a>
+            <a class="icon-jquery iconTop iconMedium" href="https://jquery.com/" target="_blank">jQuery</a>
+            <a class="icon-react iconTop iconMedium" href="https://reactjs.org/" target="_blank">React</a>
+            <a class="icon-angular iconTop iconMedium" href="https://angular.io/" target="_blank">Angular</a>
+            <a class="icon-vue iconTop iconMedium" href="https://vuejs.org/" target="_blank">Vue</a>
+            <a class="icon-ghub iconTop iconMedium" href="https://github.com/" target="_blank">Github</a>
+          </div>
+          <h2 class="heading">Platforms</h2>
+          <div class="pad-bottom">I aim to support as many platforms and devices as possible when needed.</div>
+          <div class="techlist-icons">
+            <a class="icon-safari iconTop iconMedium" href="https://www.apple.com/safari/" target="_blank">Safari</a>
+            <a class="icon-firefox iconTop iconMedium" href="https://www.mozilla.org/en-US/firefox/" target="_blank">Firefox</a>
+            <a class="icon-chrome iconTop iconMedium" href="https://www.google.com/chrome/" target="_blank">Chrome</a>
+            <a class="icon-opera iconTop iconMedium" href="https://www.opera.com/computer" target="_blank">Opera</a>
+            <a class="icon-edge iconTop iconMedium" href="https://www.microsoft.com/en-us/windows/microsoft-edge" target="_blank">Edge</a>
+            <a class="icon-windows iconTop iconMedium" href="https://www.microsoft.com/en-us/" target="_blank">Windows</a>
+            <a class="icon-apple iconTop iconMedium" href="https://www.apple.com/mac/" target="_blank">Mac</a>
+            <a class="icon-linux iconTop iconMedium" href="https://www.ubuntu.com/" target="_blank">Linux</a>
+            <a class="icon-laptop iconTop iconMedium" href="#" data-action="none">Laptop</a>
+            <a class="icon-tablet iconTop iconMedium" href="#" data-action="none">Tablet</a>
+            <a class="icon-mobile iconTop iconMedium" href="#" data-action="none">Phone</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- projects section -->
+      <section id="projects" class="projects-wrap content-wrap content-skew">
+        <div class="container">
+          <h2 class="heading">Projects</h2>
+          <div class="projects-info">
+            List of pinned projects from my &nbsp;
+            <a class="text-clip icon-ghub iconLeft" href="#" data-action="go:github">Github</a> profile. &nbsp;
+            Visit my Github profile to see more, or contact me if you have specific questions about my work. You can also find more of my work on &nbsp;
+            <a class="text-clip icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen</a>.
+          </div>
+          <hr />
+          <div id="projects-loader" class="loader">Loading list of projects...</div>
+          <div id="projects-slideshow" class="slideshow-wrap hidden">
+            <div class="slideshow-back"></div>
+            <div class="slideshow-next"></div>
+            <div class="slideshow-nav"></div>
+            <div class="slideshow-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer section -->
+      <footer id="contact" class="footer-wrap content-wrap content-dark bg-img bg-img-bottom bg-img-fixed" data-image="public/images/footer-bg.jpg">
+        <div class="container">
+          <!-- contact area columns -->
+          <div class="flex-grid flex-grid-reverse">
+            <!-- contact links -->
+            <div class="flex-grid-item flex-40">
+              <h2 class="heading">Contact</h2>
+              <div class="flex-row flex-middle flex-stretch push-bottom">
+                <div class="pad-right">
+                  <img class="user-avatar avatar clickable" src="public/images/avatar.jpg" width="100%" alt="Rainner" />
+                </div>
+                <div class="flex-1">
+                  <div class="user-name">Rainner Lins</div>
+                  <div class="text-smaller pad-top pad-bottom">
+                    <span class="user-bio text-grey">Freelance programmer / web developer for hire.</span>
+                  </div>
+                  <div class="text-smaller">
+                    <a class="user-email text-clip icon-mail iconLeft" title="Compose mail" href="mailto:info@rainnerlins.com">info@rainnerlins.com</a> <br />
+                    <a class="user-location text-clip icon-location iconLeft" title="View on map" href="https://www.google.com/maps/place/Queens,+NY" target="_blank">Queens, New York</a>
+                  </div>
+                </div>
+              </div>
+              <h2 class="heading">Weblinks</h2>
+              <div class="pad-bottom">You can find me out there on one of these sites.</div>
+              <div class="text-clip">
+                <a class="text-clip icon-ghub iconLeft" href="#" data-action="go:github">https://github.com/</a> <br />
+                <a class="text-clip icon-stackoverflow iconLeft" href="#" data-action="go:stackoverflow">https://stackoverflow.com/</a> <br />
+                <a class="text-clip icon-twtr iconLeft" href="#" data-action="go:twitter">https://twitter.com/</a> <br />
+                <a class="text-clip icon-instag iconLeft" href="#" data-action="go:instagram">https://instagram.com/</a> <br />
+                <a class="text-clip icon-codepen iconLeft" href="#" data-action="go:codepen">https://codepen.io/</a> <br />
+              </div>
+            </div>
+            <!-- contact form -->
+            <div class="flex-grid-item flex-60">
+              <h2 class="heading">Message</h2>
+              <div class="push-bottom">Use the form below to send me a quick message. I'll get back to you as soon as possible.</div>
+              <form class="contact-form" action="#" method="post">
+                <div class="form-row">
+                  <input class="form-input" name="email" type="text" required />
+                  <label class="form-label" for="email">Your e-mail address</label>
+                </div>
+                <div class="form-row">
+                  <textarea class="form-input" name="message" required></textarea>
+                  <label class="form-label" for="message">Your message</label>
+                </div>
+                <div class="flex-row flex-stretch">
+                  <button class="flex-50 form-btn bg-secondary-hover" type="submit">
+                    <span class="icon-send iconLeft">Submit</span>
+                    <span class="icon-reset iconLeft iconSpin hidden">Sending...</span>
+                  </button>
+                  <div>&nbsp;&nbsp;</div>
+                  <button class="flex-50 form-btn bg-grey-hover" type="reset">
+                    <span class="icon-reload iconLeft">Reset</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- bottom spacer -->
+          <div class="push-bottom">
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- back-to-top button -->
+      <div id="btt">
+        <button class="icon-up-open" data-scroll="body"></button>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="public/bundles/app.min.js"></script>
+  </body>
 </html>

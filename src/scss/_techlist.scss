@@ -1,0 +1,29 @@
+/**
+ * Technologies list
+ */
+.techlist-wrap {
+  display: block;
+  position: relative;
+  text-align: center;
+
+  .techlist-icons {
+    position: relative;
+
+    & > a {
+      display: inline-block;
+      margin: .5em;
+      line-height: 1em;
+      font-size: 70%;
+      color: $colorDocumentText;
+      opacity: .6;
+
+      &:before {
+        font-size: 400%;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

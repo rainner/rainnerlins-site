@@ -1,0 +1,37 @@
+/**
+ * Loader for AJAX content
+ */
+.loader {
+  display: block;
+  pointer-events: none;
+  text-align: center;
+  margin: 0;
+  padding: ( $padSpace * 2 ) 0;
+
+  &.done {
+    display: none;
+  }
+
+  &:before {
+    display: block;
+    transition: none;
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 300%;
+    line-height: 1em;
+    margin: 0 0 10px 0;
+    content: '\e82d'; // icon-reset
+    animation: spinRight 1s infinite linear;
+    color: $colorGrey;
+  }
+
+  &.error:before {
+    content: '\e844'; // icon-cry
+    animation: none;
+    color: $colorDanger;
+  }
+
+
+}

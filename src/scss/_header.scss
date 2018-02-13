@@ -1,0 +1,66 @@
+/**
+ * Page header
+ */
+.header-wrap {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba( $colorDocument, 0.2 );
+  border-bottom: $lineWidth $lineStyle $colorSecondary;
+  color: $colorDocumentText;
+  transform: translateY( 0 );
+  z-index: $zindexElements;
+
+  // change from transparent to solid
+  &.solid {
+    background-color: $colorDocument;
+    border-color: rgba(0,0,0,0);
+    box-shadow: $shadowBold;
+  }
+
+  // slide up and out of view
+  &.hidden {
+    transform: translateY( calc( -10px - #{$topbarHeight} ) );
+  }
+
+  .header-row {
+    height: $topbarHeight;
+
+    // logo on left
+    .header-logo {
+      font-size: 140%;
+      line-height: 1em;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      color: darken( $colorDocumentText, 30% );
+      text-shadow: $shadowText;
+
+      a, b, span, button {
+        font-size: inherit;
+        text-transform: inherit;
+        color: inherit;
+      }
+      a > b,
+      a > span {
+        color: $colorSecondary;
+        font-weight: normal;
+      }
+    }
+
+    // menu button and dropdown on right
+    .header-menu {
+      .dropdown-trigger {
+        font-size: 140%;
+        line-height: 1em;
+        color: lighten( $colorDocumentText, 20% );
+        text-shadow: $shadowText;
+
+        &:hover {
+          color: darken( $colorDocumentText, 10% );
+        }
+      }
+    }
+  }
+}

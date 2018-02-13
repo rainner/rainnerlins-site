@@ -1,0 +1,55 @@
+
+// circular avatar images
+img.avatar {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  max-width: 120px;
+  border-radius: 120px;
+  border: $lineWidth $lineStyle $colorDocumentText;
+  box-shadow: $shadowPaper;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// rounded thumb images
+img.thumb {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: $lineJoin;
+  box-shadow: $shadowPaper;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// section background images
+.bg-img {
+  background-image: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.bg-img-fixed {
+    background-attachment: fixed;
+  }
+  &.bg-img-top {
+    background-position: center top;
+  }
+  &.bg-img-bottom {
+    background-position: center bottom;
+  }
+  &.bg-img-contain {
+    background-size: contain;
+  }
+}
