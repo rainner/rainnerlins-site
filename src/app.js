@@ -10,7 +10,6 @@ import './modules/Polyfills';
 import './setup/github';
 import './setup/services';
 import './setup/contact';
-import './setup/links';
 import './setup/dropdowns';
 import './setup/tooltips';
 import './setup/scroller';
@@ -26,8 +25,17 @@ const updateImages = () => {
     let img  = new Image();
 
     img.addEventListener( 'load', e => {
-      if ( elm.tagName === 'IMG' ) { elm.src = file; }
-      else { elm.style.backgroundImage = 'url( '+ file +' )'; }
+      // image tags
+      if ( elm.tagName === 'IMG' ) {
+        // replace old image with new one to trigger css animation once loaded
+        let newImg = elm.cloneNode( false );
+        newImg.src = file;
+        elm.parentNode.replaceChild( newImg, elm );
+      }
+      else {
+        // everything else gets a bg swap
+        elm.style.backgroundImage = 'url( '+ file +' )';
+      }
     }, false );
 
     elm.removeAttribute( attr );
@@ -44,5 +52,5 @@ window.addEventListener( 'load', e => {
   let container = document.querySelector( '#app' );
   container.style.opacity = 1;
   // swap images
-  setTimeout( updateImages, 500 );
+  setTimeout( updateImages, 400 );
 });
