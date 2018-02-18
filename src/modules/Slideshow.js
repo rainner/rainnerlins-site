@@ -10,8 +10,12 @@ export default class Slideshow {
     this._options = Object.assign( {
       // css class prefix for inner elements
       prefixClass: 'slideshow',
-      // class for active slide
-      activeClass: 'active',
+      // class for active slide and controls
+      activeClass: 'slide-active',
+      // class for slide going next
+      nextClass: 'slide-next',
+      // class for slide going back
+      backClass: 'slide-back',
       // auto skip to next slide
       autoplay: true,
       // loop around when skipping
@@ -34,6 +38,7 @@ export default class Slideshow {
     this._last   = this._total ? ( this._total - 1 ) : 0;
     this._first  = 0;
     this._index  = 0;
+    this._dircls = '';
     this._xpos   = null;
     this._ypos   = null;
     this._sint   = null;
@@ -47,33 +52,44 @@ export default class Slideshow {
     this._init();
   }
 
-  // constructor
+  // go to the next slide
   next() {
     if ( !this._options.loop && this._index === this._last ) return;
     this._index = ( this._index === this._last ) ? this._first : ( this._index + 1 );
+    this._dircls = this._options.nextClass;
     this.select( this._index );
   }
 
-  // constructor
+  // go to the previous slide
   back() {
     if ( !this._options.loop && this._index === this._first ) return;
     this._index = ( this._index === this._first ) ? this._last : ( this._index - 1 );
+    this._dircls = this._options.backClass;
     this.select( this._index );
   }
 
-  // constructor
+  // select a slide by index
   select( index ) {
-    if ( !this._target || !this._total ) return;
-
     index = index | 0;
-    let slide = this._slides[ index ];
+    let slide = this._slides[ index ] || null;
 
+    // no need if these fail
+    if ( !this._target || !this._total || !slide ) return;
+
+    // reset all slides and buttons
     for ( let i = 0; i < this._slides.length; ++i ) {
       if ( this._navEl ) this._navEl.children[ i ].classList.remove( this._options.activeClass );
       this._slides[ i ].classList.remove( this._options.activeClass );
+      this._slides[ i ].classList.remove( this._options.nextClass );
+      this._slides[ i ].classList.remove( this._options.backClass );
     }
+    // set active slide and button
     if ( this._navEl ) this._navEl.children[ index ].classList.add( this._options.activeClass );
+    if ( this._dircls ) slide.classList.add( this._dircls );
     slide.classList.add( this._options.activeClass );
+
+    // clear selected direction class
+    this._dircls = '';
   }
 
   // user interaction
