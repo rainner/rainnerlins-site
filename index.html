@@ -32,10 +32,10 @@
     <link rel="stylesheet" href="public/bundles/app.min.css" />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-854018-2"></script>
+    <script async src="//googletagmanager.com/gtag/js?id=UA-854018-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag() { dataLayer.push( arguments ); }
       gtag( 'js', new Date() );
       gtag( 'config', 'UA-854018-2' );
     </script>
@@ -65,7 +65,6 @@
               <div class="dropdown-content">
                 <ul class="dropdown-list">
                   <li class="title">Internal</li>
-                  <li><a class="icon-home iconLeft" href="#hero" data-scroll="#hero">Home</a></li>
                   <li><a class="icon-list iconLeft" href="#services" data-scroll="#services">Services</a></li>
                   <li><a class="icon-html5 iconLeft" href="#technologies" data-scroll="#technologies">Technologies</a></li>
                   <li><a class="icon-design iconLeft" href="#projects" data-scroll="#projects">Projects</a></li>
@@ -74,7 +73,7 @@
                   <li><a class="icon-ghub iconLeft" href="#" data-action="go:github">Github</a></li>
                   <li><a class="icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen</a></li>
                   <li><a class="icon-twtr iconLeft" href="#" data-action="go:twitter">Twitter</a></li>
-                  <li><a class="icon-at iconLeft contact-link" href="mailto:info@rainnerlins.com">Email</a></li>
+                  <li><a class="icon-at iconLeft contact-link" href="#">Email</a></li>
                 </ul>
               </div>
             </div>
@@ -101,7 +100,12 @@
             <div class="slideshow-back"></div>
             <div class="slideshow-next"></div>
             <div class="slideshow-nav"></div>
-            <div class="slideshow-list"></div>
+            <div class="slideshow-list">
+              <div class="slideshow-item">
+                <h3>Website Development Services</h3>
+                <p>Front-end Javascript web development, Server-side PHP or Node JS application programming, Third-party web API integration, Social media API, Web store e-commerce services, Payment processing and cryptocurrencies.</p>
+              </div>
+            </div>
           </div>
           <ul class="services-tips">
             <li class="icon-laptop iconTop iconLarge iconBright text-grey">
@@ -123,7 +127,7 @@
         <div class="container">
           <h2 class="heading">Technologies</h2>
           <div class="pad-bottom">List of commonly used tools and technologies that help me get the job done.</div>
-          <div class="techlist-icons push-bottom">
+          <div class="techlist-icons">
             <a class="icon-nodejs iconTop iconMedium" href="https://nodejs.org/en/" target="_blank">Node</a>
             <a class="icon-gulp iconTop iconMedium" href="https://gulpjs.com/" target="_blank">Gulp</a>
             <a class="icon-webpack iconTop iconMedium" href="https://webpack.js.org/" target="_blank">Webpack</a>
@@ -140,6 +144,7 @@
             <a class="icon-vue iconTop iconMedium" href="https://vuejs.org/" target="_blank">Vue</a>
             <a class="icon-ghub iconTop iconMedium" href="https://github.com/" target="_blank">Github</a>
           </div>
+          <hr />
           <h2 class="heading">Platforms</h2>
           <div class="pad-bottom">I aim to support as many platforms and devices as possible when needed.</div>
           <div class="techlist-icons">
@@ -187,7 +192,7 @@
             <!-- contact links -->
             <div class="flex-grid-item flex-40">
               <h2 class="heading">Contact</h2>
-              <div class="flex-row flex-middle flex-stretch push-bottom">
+              <div class="flex-row flex-middle flex-stretch">
                 <div class="pad-right">
                   <img class="user-avatar avatar clickable" src="public/images/avatar.jpg" width="100%" alt="Rainner" />
                 </div>
@@ -197,11 +202,12 @@
                     <span class="user-bio text-grey">Freelance programmer / web developer for hire.</span>
                   </div>
                   <div class="text-smaller">
-                    <a class="user-email text-clip icon-mail iconLeft" title="Compose mail" href="mailto:info@rainnerlins.com">info@rainnerlins.com</a> <br />
-                    <a class="user-location text-clip icon-location iconLeft" title="View on map" href="https://www.google.com/maps/place/Queens,+NY" target="_blank">Queens, New York</a>
+                    <a class="user-email text-clip icon-mail iconLeft" title="Compose mail" href="#">...</a> <br />
+                    <a class="user-location text-clip icon-location iconLeft" title="View on map" href="https://www.google.com/maps/" target="_blank">...</a>
                   </div>
                 </div>
               </div>
+              <hr />
               <h2 class="heading">Weblinks</h2>
               <div class="pad-bottom">You can find me out there on one of these sites.</div>
               <div class="text-clip">
