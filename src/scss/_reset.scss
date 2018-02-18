@@ -41,6 +41,7 @@ p, ol, ul, form, img {
 html, body {
   display: block;
   position: relative;
+  max-width: 100vw;
   min-height: 100vh;
 }
 html {
@@ -48,7 +49,6 @@ html {
   overflow-y: scroll;
 }
 body {
-  overflow-x: hidden;
   font-family: $fontFamily;
   font-weight: normal;
   font-size: calc( #{$fontSize} - 4px );

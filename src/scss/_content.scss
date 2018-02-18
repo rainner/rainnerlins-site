@@ -37,10 +37,10 @@
       position: absolute;
       transition: none;
       outline: 1px solid transparent;
-      left: -300px;
-      right: -300px;
+      left: -100px;
+      right: -100px;
       top: 0;
-      height: 100%;
+      bottom: 0;
       z-index: 1;
     }
     &:before {

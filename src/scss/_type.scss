@@ -41,7 +41,8 @@ h6 { font-size: 100%; }
 // common headings
 .heading {
   display: block;
-  margin: 0 0 25px 0;
+  overflow: visible !important;
+  margin: 0 0 $padSpace 0;
   padding: 0;
   line-height: 1em;
 }

@@ -1,6 +1,15 @@
 /**
  * Slideshow styles
  */
+@keyframes slideshowNext {
+    0% { transform: translateX( 300px ); }
+  100% { transform: translateX( 0 ); }
+}
+@keyframes slideshowBack {
+    0% { transform: translateX( -300px ); }
+  100% { transform: translateX( 0 ); }
+}
+
 .slideshow-wrap {
   display: block;
   position: relative;
@@ -48,7 +57,7 @@
       width: 1em;
       height: 1em;
 
-      &.active {
+      &.slide-active {
         background-color: $colorPrimary;
         border-color: lighten( $colorPrimary, 10% );
       }
@@ -97,8 +106,15 @@
 
     .slideshow-item {
       display: none;
+      transition: none;
 
-      &.active {
+      &.slide-next {
+        animation: slideshowNext $fxSpeed $fxEase forwards;
+      }
+      &.slide-back {
+        animation: slideshowBack $fxSpeed $fxEase forwards;
+      }
+      &.slide-active {
         display: block;
       }
     }

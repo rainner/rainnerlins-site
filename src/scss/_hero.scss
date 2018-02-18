@@ -12,6 +12,7 @@
 
   .hero-content {
     position: relative;
+    padding: calc( #{$topbarHeight} + 1em ) 0;
 
     .hero-title {
       font-size: 240%;
