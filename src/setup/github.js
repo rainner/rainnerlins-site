@@ -8,7 +8,7 @@ import DomHelper from '../modules/DomHelper';
 
 // endpoint info
 const github_api = 'https://api.github.com/graphql';
-const github_key = '9277a09725196cf91f50a3db79934445547b19a1'; // read-only
+const github_key = '3b37b9c8ad1cf60329cb95c01e224604cde0666d'; // read-only
 
 // init loader
 const loader = Loader( '#projects-loader' );
