@@ -2,9 +2,9 @@
   "profile": {
     "name": "Rainner Lins",
     "email": "info@rainnerlins.com",
-    "phone": "+1-917-687-6945",
-    "avatar": "public/images/avatar.jpg",
+    "location": "Astoria NY, USA",
     "bio": "Software Developer / System Admin / Technology Enthusiast",
-    "location": "Astoria NY, USA"
+    "avatarUrl": "public/images/avatar.jpg",
+    "url": "https://rainnerlins.com/"
   }
 }
