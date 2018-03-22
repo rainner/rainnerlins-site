@@ -107,7 +107,7 @@ const loadJsonData = () => {
 const loadGithubData = () => {
   new Ajax( 'POST', api.endpoint, {
     type: 'json',
-    headers: { 'Authorization': 'bearer '+ api.token },
+    headers: { 'Authorization': 'bearer '+ atob( api.token ) },
     data: graphQlQuery,
     complete: ( xhr, response ) => {
       // something went wrong, try fetching data from local JSON file
