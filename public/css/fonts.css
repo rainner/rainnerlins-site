@@ -1,0 +1,18 @@
+/**
+ * Font files
+ */
+@font-face {
+  font-family: 'Capriola';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url( '../fonts/capriola.ttf' ) format( 'truetype' );
+}
+@font-face {
+  font-family: 'fontello';
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+  src: url( '../fonts/fontello.woff2' ) format( 'woff2' ),
+       url( '../fonts/fontello.woff' ) format( 'woff' );
+}
