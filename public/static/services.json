@@ -1,0 +1,28 @@
+{
+  "services": [
+    {
+      "image": "public/services/websites.png",
+      "icon": "icon-code",
+      "name": "Websites",
+      "description": "Start from scratch or convert your outdated website into a modern web 2.0 website that works on mobile and desktop devices making use of the latest technologies browsers have to offer.",
+      "examples": [
+        "Custom static templates, layouts & themes.",
+        "Conversion of graphic design into working template.",
+        "Templates & themes for existing CMS software.",
+        "User interfaces & admin panels."
+      ]
+    },
+    {
+      "image": "public/services/websites.png",
+      "icon": "icon-code",
+      "name": "Websites",
+      "description": "Start from scratch or convert your outdated website into a modern web 2.0 website that works on mobile and desktop devices making use of the latest technologies browsers have to offer.",
+      "examples": [
+        "Custom static templates, layouts & themes.",
+        "Conversion of graphic design into working template.",
+        "Templates & themes for existing CMS software.",
+        "User interfaces & admin panels."
+      ]
+    }
+  ]
+}
