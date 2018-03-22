@@ -40,7 +40,6 @@ const graphQlQuery = {
 
 // update user data throughout the page with data from github
 const updateUserData = ( data ) => {
-  if ( !data || typeof data !== 'object' ) return;
   DomHelper( '.logo-link' ).updateLogo( data.name, '/' );
   DomHelper( '.user-name' ).updateName( data.name );
   DomHelper( '.contact-link' ).updateContact( data.email, 'Website Development' ); // keep text
@@ -58,7 +57,7 @@ const buildSlide = ( repo ) => {
     <div class="flex-grid flex-top">
       <div class="flex-grid-item flex-40">
         <a href="${ repo.url }" target="_blank">
-          <img class="fx-on fx-drop-in" src="public/images/default-thumb.svg" data-image="${ repo.url }/master/thumb.jpg" width="100%" alt="${ repo.name }" />
+          <img class="fx-on fx-drop-in" src="public/images/thumb.svg" data-image="${ repo.url }/master/thumb.jpg" width="100%" alt="${ repo.name }" />
         </a>
       </div>
       <div class="flex-grid-item flex-60">
@@ -93,15 +92,13 @@ const buildSlideshow = ( repos ) => {
 
 // get data from github graphql api
 new Ajax( 'POST', github_api, {
-  data: graphQlQuery,
+  type: 'json',
   headers: { 'Authorization': 'bearer '+ github_key },
+  data: graphQlQuery,
   complete: ( xhr, response ) => {
-
-    // not looking good
     if ( !response || !response.data || Array.isArray( response.errors ) ) {
       return loader.error( 'Status '+ xhr.status +' : Could not load projects, try again later.' );
     }
-    // data looks good, init
     loader.hide();
     updateUserData( response.data.user );
     buildSlideshow( response.data.user.pinnedRepositories.edges );

@@ -6,42 +6,11 @@ import Loader from '../modules/Loader';
 import Slideshow from '../modules/Slideshow';
 
 // endpoint to static data file
-const endpoint = 'public/static/data.json';
+const endpoint = 'public/static/services.json';
 
 // init loader
 const loader = Loader( '#services-loader' );
 loader.show( 'Loading list of services...' );
-
-// setup dynamic page links
-const setupLinks = ( links ) => {
-  let elms = document.querySelectorAll( '[data-action]' );
-
-  if ( typeof links === 'object' && elms.length ) {
-    for ( let i = 0; i < elms.length; ++i ) {
-
-      elms[ i ].addEventListener( 'click', e => {
-        e.preventDefault();
-        let key    = e.target.getAttribute( 'data-action' ) || '';
-        let parts  = key.split( ':' ); // action:source:target
-        let action = parts.length ? parts.shift() : '';
-        let source = parts.length ? parts.shift() : '';
-        let target = parts.length ? parts.shift() : '_blank';
-
-        if ( action === 'go' && source ) {
-          let url = links[ source ] || '';
-          if ( url ) window.open( url, target );
-          return;
-        }
-        if ( action === 'reload' ) {
-          return window.location.reload();
-        }
-        if ( action === 'back' ) {
-          return window.history.back();
-        }
-      });
-    }
-  }
-};
 
 // build single service slide
 const buildSlide = ( service ) => {
@@ -83,20 +52,10 @@ const buildSlideshow = ( services ) => {
 
 // get services data from JSON file and init
 new Ajax( 'GET', endpoint, {
-  complete: ( xhr, response ) => {
-
-    // services data not yet parsed, try to parse it
-    if ( typeof response === 'string' ) {
-      try { response = JSON.parse( response || '{}' ); }
-      catch( e ) { }
-    }
-    // not looking good
-    if ( !response.services ) {
-      return loader.error( 'Status '+ xhr.status +' : Could not load services, try again later.' );
-    }
-    // data looks good, init
+  type: 'json',
+  complete: ( xhr, services ) => {
+    if ( !services ) return loader.error( xhr.status +' : Could not load services.' );
     loader.hide();
-    buildSlideshow( response.services );
-    setupLinks( response.links );
+    buildSlideshow( services );
   }
 });
