@@ -30,7 +30,7 @@ ul.checklist {
     display: block;
     position: relative;
     margin: 0 0 0 $padSpace;
-    padding: ( $padSpace / 2 ) 0 ( $padSpace / 2 ) 1.5em;
+    padding: ( $padSpace / 2 ) 0 ( $padSpace / 2 ) 1.8em;
     font-size: 90%;
     line-height: 1.2em;
     color: darken( $colorDocumentText, 20% );
@@ -39,11 +39,11 @@ ul.checklist {
       display: inline-block;
       position: absolute;
       left: 0;
-      top: .6em;
+      top: .4em;
+      font-size: 120%;
       line-height: 1em;
-      font-family: 'fontello';
-      content: '\e801';
-      color: $colorSecondary;
+      color: desaturate( $colorSecondary, 10% );
+      opacity: 1;
     }
   }
 }
