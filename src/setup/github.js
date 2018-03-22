@@ -1,14 +1,14 @@
 /**
  * Setup github repo data from api.
  */
+import api from '../../assets/api/github';
 import Ajax from '../modules/Ajax';
 import Loader from '../modules/Loader';
 import Slideshow from '../modules/Slideshow';
 import DomHelper from '../modules/DomHelper';
 
-// endpoint info
-const github_api = 'https://api.github.com/graphql';
-const github_key = '3b37b9c8ad1cf60329cb95c01e224604cde0666d'; // read-only
+// fallback profile data endpoint
+const jsonEndpoint = 'public/static/profile.json';
 
 // init loader
 const loader = Loader( '#projects-loader' );
@@ -20,11 +20,11 @@ const graphQlQuery = {
     query {
       user( login: "rainner" ) {
         name,
-        avatarUrl,
-        url,
-        bio,
         email,
         location,
+        bio,
+        avatarUrl,
+        url,
         pinnedRepositories( first: 10 ) {
           edges {
             node {
@@ -90,20 +90,42 @@ const buildSlideshow = ( repos ) => {
   new Slideshow( target );
 };
 
-// get data from github graphql api
-new Ajax( 'POST', github_api, {
-  type: 'json',
-  headers: { 'Authorization': 'bearer '+ github_key },
-  data: graphQlQuery,
-  complete: ( xhr, response ) => {
-    if ( !response || !response.data || Array.isArray( response.errors ) ) {
-      return loader.error( 'Status '+ xhr.status +' : Could not load projects, try again later.' );
-    }
-    loader.hide();
-    updateUserData( response.data.user );
-    buildSlideshow( response.data.user.pinnedRepositories.edges );
-  },
-});
+// load user data from json file
+const loadJsonData = () => {
+  new Ajax( 'GET', jsonEndpoint, {
+    type: 'json',
+    complete: ( xhr, response ) => {
+      if ( !response || !response.profile ) {
+        return console.error( 'There was a problem loading user profile data for this page, the network tab might have more information.' );
+      }
+      updateUserData( response.profile );
+    },
+  });
+};
+
+// load user data from github
+const loadGithubData = () => {
+  new Ajax( 'POST', api.endpoint, {
+    type: 'json',
+    headers: { 'Authorization': 'bearer '+ api.token },
+    data: graphQlQuery,
+    complete: ( xhr, response ) => {
+      // something went wrong, try fetching data from local JSON file
+      if ( !response || !response.data || Array.isArray( response.errors ) ) {
+        loader.error( 'Status '+ xhr.status +' : Could not load projects, try again later.' );
+        loadJsonData();
+        return;
+      }
+      loader.hide();
+      updateUserData( response.data.user );
+      buildSlideshow( response.data.user.pinnedRepositories.edges );
+    },
+  });
+};
+
+// load data
+loadGithubData();
+
 
 
 
