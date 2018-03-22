@@ -1,9 +1,0 @@
-<svg id="thumb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 460">
-  <title>default-thumb</title>
-  <rect id="border" x="10" y="10" width="760" height="440" rx="20" ry="20" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 20px;opacity: 0.2"/>
-  <g id="mountain" style="opacity: 0.2">
-    <path d="M336.74,174.62a34.6,34.6,0,1,1-34.6-34.6A34.56,34.56,0,0,1,336.74,174.62Z" transform="translate(-10 -10)" style="fill: #fff"/>
-    <path d="M571.49,342h-343l45.63-97.86,29,42.6L399.78,139.8l69.31,103.91,32.76-35.79Z" transform="translate(-10 -10)" style="fill: #fff"/>
-    <animate attributeName="opacity" values=".2;.6;.2" dur="2s" repeatCount="indefinite" />
-  </g>
-</svg>
