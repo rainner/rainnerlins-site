@@ -12,6 +12,7 @@ const handler = e => {
 
   let proto   = window.location.protocol || 'https:';
   let host    = window.location.host || 'rainnerlins.com';
+  let path    = window.location.pathname || '/';
   let email   = Input( e.target.email ).email().required();
   let message = Input( e.target.message ).min( 20 ).required();
   let subject = 'Dialogue with '+ email.val() +' on '+ host +'.';
@@ -22,7 +23,7 @@ const handler = e => {
 
   // submit to new URL
   e.target.setAttribute( 'target', '_self' );
-  e.target._next.value = proto +'//'+ host +'/#mailsent';
+  e.target._next.value = proto + '//' + host + path + '#mailsent';
   e.target._subject.value = subject;
   e.target.submit();
   e.target.reset();
