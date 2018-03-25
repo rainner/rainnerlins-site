@@ -1,0 +1,78 @@
+/**
+ * Modals
+ */
+ .modal-overlay {
+  display: block;
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $colorOverlay;
+  z-index: $zindexModals;
+  pointer-events: none;
+  opacity: 0;
+
+  .modal-container {
+    margin: $padSpace;
+    color: $colorDocument;
+    background-color: $colorDocumentText;
+    border-radius: $lineJoin;
+    @include borderAccent;
+    box-shadow: $shadowBold;
+    transform: scale( 0.5 );
+
+    @media #{$screenMedium} {
+      margin: 100px auto;
+      max-width: $sizeMedium;
+    }
+
+    .modal-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: stretch;
+      padding: $padSpace;
+      border-bottom: $lineWidth $lineStyle rgba( 0, 0, 0, 0.1 );
+
+      .modal-title, .modal-close {
+        display: inline-block;
+        font-size: 120%;
+        font-weight: normal;
+        text-transform: capitalize;
+        line-height: 1.2em;
+      }
+
+      .modal-title {
+        flex: 1;
+      }
+
+      .modal-close {
+        cursor: pointer;
+        color: $colorSecondary;
+        &:before { opacity: 1; }
+        &:hover { opacity: .8; }
+      }
+    }
+
+    .modal-body {
+      display: block;
+      padding: $padSpace;
+    }
+  }
+}
+
+.modal-overlay.visible {
+  z-index: $zindexModals;
+  pointer-events: auto;
+  opacity: 1;
+
+  .modal-container {
+    transform: scale( 1 );
+  }
+}
+
+.modal-overlay.under {
+  z-index: $zindexUnder;
+}
