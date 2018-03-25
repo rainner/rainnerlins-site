@@ -48,6 +48,49 @@ ul.checklist {
   }
 }
 
+// text pills/badges
+.pill {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 5px 0 0;
+  padding: 0 1em;
+  font-size: 90%;
+  line-height: 1.6em;
+  vertical-align: middle;
+  color: $colorDocument;
+  background-color: $colorDocumentText;
+  border-radius: 100px;
+  box-shadow: $shadowPaper;
+}
+
+// qr code container
+.qr-wrap {
+  text-align: center;
+
+  .qr-image {
+    margin: 0 auto 1em auto;
+    overflow: hidden;
+    border-radius: 100px;
+  }
+
+  .qr-info {
+    margin: 0 0 1em 0;
+  }
+
+  .qr-address {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2em;
+    padding: .5em;
+    color: #000;
+    background-color: rgba( 0, 0, 0, 0.05 );
+    border: $lineWidth $lineStyle rgba( 0, 0, 0, 0.1 );
+    border-radius: 100px;
+  }
+}
+
 // common margins
 .push-top {
   margin-top: ( $padSpace * 3 );
