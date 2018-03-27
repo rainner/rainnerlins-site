@@ -2,17 +2,24 @@
  * Hero section
  */
 .hero-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  position: relative;
+  text-align: center;
   min-height: 100vh;
   background-color: darken( $colorDocument, 10% );
   color: $colorDocumentText;
 
+  .container {
+    position: absolute;
+    left: 50%;
+    top: calc( 50% + #{$topbarHeight} );
+    transition: none;
+    transform: translateX( -50% ) translateY( -65% );
+  }
+
   .hero-content {
     position: relative;
-    padding: calc( #{$topbarHeight} + 1em ) 0;
+    padding: 1em 0;
 
     .hero-title {
       font-size: 240%;

@@ -8,11 +8,11 @@
   border: 0;
   outline: none;
   background-color: transparent;
-  appearance: none;
   text-transform: none;
   text-shadow: none;
   box-shadow: none;
   box-sizing: border-box;
+  -webkit-appearance: none;
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

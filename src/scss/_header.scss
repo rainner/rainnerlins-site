@@ -10,7 +10,6 @@
   background-color: rgba( $colorDocument, 0.2 );
   border-bottom: $lineWidth $lineStyle $colorSecondary;
   color: $colorDocumentText;
-  transform: translateY( 0 );
   z-index: $zindexElements;
 
   // change from transparent to solid
@@ -23,6 +22,7 @@
   // slide up and out of view
   &.hidden {
     transform: translateY( calc( -10px - #{$topbarHeight} ) );
+    // top: calc( -10px - #{$topbarHeight} );
   }
 
   .header-row {

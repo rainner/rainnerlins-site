@@ -113,10 +113,7 @@
  * Basic grid
  */
 .flex-grid {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: stretch;
+  display: block;
 
   .flex-grid-item {
     margin-bottom: ( $padSpace * 2 );
@@ -133,7 +130,10 @@
   }
 
   @media #{$screenMedium} {
+    display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
 
     .flex-grid-item {
       padding-right: ( $padSpace * 2 );
