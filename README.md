@@ -2,7 +2,7 @@
 [twitter]: http://twitter.com/raintek_
 
 # rainnerlins-site
-Main repo for [https://rainnerlins.com/][https://rainnerlins.com/]
+Main repo for [https://rainnerlins.com/][siteurl]
 
 ### Author
 
