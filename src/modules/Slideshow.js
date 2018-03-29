@@ -88,7 +88,8 @@ export default class Slideshow {
     if ( this._dircls ) slide.classList.add( this._dircls );
     slide.classList.add( this._options.activeClass );
 
-    // clear selected direction class
+    // save index and clear selected direction class
+    this._index = index;
     this._dircls = '';
   }
 
