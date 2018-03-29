@@ -6,6 +6,7 @@ import Ajax from '../modules/Ajax';
 import Loader from '../modules/Loader';
 import Slideshow from '../modules/Slideshow';
 import DomHelper from '../modules/DomHelper';
+import Utils from '../modules/Utils';
 
 // fallback profile data endpoint
 const jsonEndpoint = 'public/static/profile.json';
@@ -28,8 +29,11 @@ const graphQlQuery = {
         pinnedRepositories( first: 10 ) {
           edges {
             node {
+              id,
               name,
+              nameWithOwner,
               description,
+              pushedAt,
               url
             }
           }
@@ -52,16 +56,20 @@ const updateUserData = ( data ) => {
 
 // build single slide for a repo
 const buildSlide = ( repo ) => {
+  let thumbTmp = `public/images/thumb.svg`;
+  let thumbUrl = `https://raw.githubusercontent.com/${ repo.nameWithOwner }/master/thumb.jpg`;
+  let pushDate = Utils.dateString( repo.pushedAt );
   return `
   <div class="slideshow-item hidden">
     <div class="flex-grid flex-top">
       <div class="flex-grid-item flex-40">
         <a href="${ repo.url }" target="_blank">
-          <img class="fx-on fx-drop-in" src="public/images/thumb.svg" data-image="${ repo.url }/master/thumb.jpg" width="100%" alt="${ repo.name }" />
+          <img class="fx-on fx-drop-in" src="${ thumbTmp }" data-image="${ thumbUrl }" width="100%" alt="${ repo.name }" />
         </a>
       </div>
       <div class="flex-grid-item flex-60">
-        <h3 class="heading fx-on fx-fade-in fx-delay-1">${ repo.name }</h3>
+        <h3 class="text-uppercase fx-on fx-fade-in fx-delay-1">${ repo.name }</h3>
+        <div class="text-smaller text-faded pad-bottom pad-top icon-clock iconLeft">Last updated &nbsp; ${ pushDate }</div>
         <div class="text-small text-grey pad-bottom fx-on fx-fade-in fx-delay-2">${ repo.description }</div>
         <div class="text-small text-clip pad-bottom fx-on fx-fade-in fx-delay-3">
           <a href="${ repo.url }" target="_blank">${ repo.url }</a>
