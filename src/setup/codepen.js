@@ -15,7 +15,7 @@ loader.show( 'Loading projects from Codepen...' );
 // build single slide for a repo
 const buildSlide = ( pen ) => {
   let thumbTmp = `public/images/thumb.svg`;
-  let thumbUrl = String( pen.images.small || '' ) || thumbTmp;
+  let thumbUrl = ( String( pen.images.small || '' ) || thumbTmp ).replace( /http\:/g, 'https:' );
   let penUrl   = `https://codepen.io/rainner/full/${ pen.id }/`;
   let penViews = String( pen.views || '' ).replace( /[^\d\,]+/g, '' ) + ' Views';
   let penLikes = String( pen.loves || '' ).replace( /[^\d\,]+/g, '' ) + ' Likes';
