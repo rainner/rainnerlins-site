@@ -1,7 +1,7 @@
 /**
  * Setup lazy-loaded images
  */
-window.addEventListener( 'load', e => {
+const setupImages = ( e ) => {
   let attr = 'data-image';
   let elms = document.querySelectorAll( '['+ attr +']' );
 
@@ -27,4 +27,6 @@ window.addEventListener( 'load', e => {
     elm.removeAttribute( attr );
     img.src = file;
   }
-}, false );
+};
+window.addEventListener( 'load', setupImages );
+window.setupImages = setupImages;
