@@ -31,16 +31,10 @@
     </style>
 
     <!-- app icon and styles -->
-    <link href="favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Acme:400" />
     <link rel="stylesheet" href="public/css/fonts.css" />
     <link rel="stylesheet" href="public/bundles/app.min.css" />
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MGN9R85');</script>
+    <link rel="shortcut icon" href="favicon.ico" />
 
   </head>
   <body id="doc">
@@ -68,7 +62,7 @@
               <img class="user-avatar clickable" src="public/images/avatar.jpg" height="100%" alt="Rainner" />
             </div>
             <div class="header-logo flex-1">
-              <a class="logo-link" href="/">Rainner<b>Lins</b></a>
+              <a class="logo-link" href="/">Rainner<span>Lins</span></a>
             </div>
             <div class="header-menu dropdown-menu">
               <button class="dropdown-trigger icon-menu clickable"></button>
@@ -96,7 +90,9 @@
         <div class="container">
           <div class="hero-content text-center">
             <h1 class="hero-title">Web Developer</h1>
+            <hr class="light" />
             <p class="hero-info">Hello, my name is Rainner. I'm a programmer and user-interface developer who builds things for use on the world-wide-web, also known as a web developer.</p>
+            <hr class="light" />
             <button class="form-btn bg-secondary-hover text-nowrap" data-scroll="#services">&nbsp; <i class="icon-down-open"></i> &nbsp; Explore &nbsp;</button>
           </div>
         </div>
@@ -106,7 +102,7 @@
       <section id="services" class="services-wrap content-wrap content-skew">
         <div class="container">
           <h2 class="heading">Services</h2>
-          <div>
+          <div class="pad-top">
             I know a thing or two about building websites and server-side applications.
             Been doing it for over 10 years and have picked up a few skills along the way.
             If you need someone to help you get your idea off the ground, or to help you add to, or modify
@@ -150,8 +146,8 @@
 
         <div class="container">
           <h2 class="heading">Technologies</h2>
-          <div class="pad-bottom">List of commonly used tools and technologies that help me get the job done.</div>
-          <div class="techlist-icons">
+          <div class="pad-top">List of commonly used tools and technologies that help me get the job done.</div>
+          <div class="techlist-icons pad-top">
             <a class="icon-nodejs iconTop iconMedium" href="https://nodejs.org/en/" target="_blank">Node</a>
             <a class="icon-gulp iconTop iconMedium" href="https://gulpjs.com/" target="_blank">Gulp</a>
             <a class="icon-webpack iconTop iconMedium" href="https://webpack.js.org/" target="_blank">Webpack</a>
@@ -170,8 +166,8 @@
           </div>
           <hr />
           <h2 class="heading">Platforms</h2>
-          <div class="pad-bottom">I aim to support as many platforms and devices as possible when needed.</div>
-          <div class="techlist-icons">
+          <div class="pad-top">I aim to support as many platforms and devices as possible when needed.</div>
+          <div class="techlist-icons pad-top">
             <a class="icon-safari iconTop iconMedium" href="https://www.apple.com/safari/" target="_blank">Safari</a>
             <a class="icon-firefox iconTop iconMedium" href="https://www.mozilla.org/en-US/firefox/" target="_blank">Firefox</a>
             <a class="icon-chrome iconTop iconMedium" href="https://www.google.com/chrome/" target="_blank">Chrome</a>
@@ -190,20 +186,42 @@
       <!-- projects section -->
       <section id="projects" class="projects-wrap content-wrap content-skew">
         <div class="container">
-          <h2 class="heading">Projects</h2>
-          <div class="projects-info">
-            List of pinned projects from my
-            <a class="text-clip icon-ghub" href="#" data-action="go:github">&nbsp;Github</a> profile.
-            Visit my Github profile to see more, or contact me if you have specific questions about my work. You can also find more of my work on
-            <a class="text-clip icon-codepen" href="#" data-action="go:codepen">&nbsp;Codepen</a>.
+          <div class="push-bottom">
+            <div class="flex-row flex-bottom flex-space push-bottom">
+              <div>
+                <h2 class="heading">Github Projects</h2>
+                <span class="text-grey">List of pinned projects from my Github profile.</span>
+              </div>
+              <div class="pad-left">
+                <a class="form-btn bg-secondary-hover icon-ghub iconLeft" href="#" data-action="go:github">Github Profile</a>
+              </div>
+            </div>
+            <div id="github-loader" class="loader"></div>
+            <div id="github-projects" class="slideshow-wrap hidden">
+              <div class="slideshow-back"></div>
+              <div class="slideshow-next"></div>
+              <div class="slideshow-nav"></div>
+              <div class="slideshow-list"></div>
+            </div>
           </div>
           <hr />
-          <div id="projects-loader" class="loader">Loading list of projects...</div>
-          <div id="projects-slideshow" class="slideshow-wrap hidden">
-            <div class="slideshow-back"></div>
-            <div class="slideshow-next"></div>
-            <div class="slideshow-nav"></div>
-            <div class="slideshow-list"></div>
+          <div class="push-bottom">
+            <div class="flex-row flex-bottom flex-space push-bottom">
+              <div>
+                <h2 class="heading">Codepen Projects</h2>
+                <span class="text-grey">List of pinned projects from my Codepen profile.</span>
+              </div>
+              <div class="pad-left">
+                <a class="form-btn bg-secondary-hover icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen Profile</a>
+              </div>
+            </div>
+            <div id="codepen-loader" class="loader"></div>
+            <div id="codepen-projects" class="slideshow-wrap hidden">
+              <div class="slideshow-back"></div>
+              <div class="slideshow-next"></div>
+              <div class="slideshow-nav"></div>
+              <div class="slideshow-list"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -216,7 +234,7 @@
             <!-- contact links -->
             <div class="flex-grid-item flex-40">
               <h2 class="heading">Contact</h2>
-              <div class="flex-row flex-middle flex-stretch">
+              <div class="flex-row flex-middle flex-stretch pad-top">
                 <div class="pad-right">
                   <img class="user-avatar avatar clickable" src="public/images/avatar.jpg" width="100%" alt="Rainner" />
                 </div>
@@ -233,7 +251,7 @@
               </div>
               <hr />
               <h2 class="heading">Weblinks</h2>
-              <div class="pad-bottom">You can find me out there on one of these sites.</div>
+              <div class="pad-vertical">You can find me out there on one of these sites.</div>
               <div class="text-clip">
                 <a class="text-clip icon-ghub iconLeft" href="#" data-action="go:github">github.com</a> <br />
                 <a class="text-clip icon-stackoverflow iconLeft" href="#" data-action="go:stackoverflow">stackoverflow.com</a> <br />
@@ -247,7 +265,7 @@
             <!-- contact form -->
             <div class="flex-grid-item flex-60">
               <h2 class="heading">Message</h2>
-              <div class="push-bottom">Use the form below to send me a quick message. I'll get back to you as soon as possible.</div>
+              <div class="pad-vertical">Use the form below to send me a quick message. I'll get back to you as soon as possible.</div>
               <form class="contact-form push-bottom" action="#" method="post">
                 <input type="hidden" name="_next" value="" />
                 <input type="hidden" name="_subject" value="" />
