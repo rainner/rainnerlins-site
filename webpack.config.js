@@ -18,7 +18,7 @@ module.exports = {
   output: {
     path: path.join( __dirname, '/' ),
     publicPath: '/',
-    filename: 'public/bundles/[hash].min.js',
+    filename: 'public/bundles/[name].min.js',
   },
   module: {
     rules: [
@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'public/bundles/[hash].min.css',
+      filename: 'public/bundles/[name].min.css',
       allChunks: true,
       disable: !isProd
     })
