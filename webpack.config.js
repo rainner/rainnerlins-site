@@ -18,7 +18,7 @@ module.exports = {
   output: {
     path: path.join( __dirname, '/' ),
     publicPath: '/',
-    filename: 'public/bundles/[name].min.js',
+    filename: 'public/bundles/[hash].min.js',
   },
   module: {
     rules: [
@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'public/bundles/[name].min.css',
+      filename: 'public/bundles/[hash].min.css',
       allChunks: true,
       disable: !isProd
     })
@@ -67,7 +67,7 @@ module.exports = {
 }
 
 if ( isProd ) {
-  module.exports.devtool = '#source-map'
+  // module.exports.devtool = '#source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
