@@ -19,9 +19,16 @@ p {
 // horizontal lines
 hr {
   display: block;
-  margin: ( $padSpace * 2 ) 0;
+  margin: ( $padSpace * 1.5 ) 0;
   border: 0;
   border-top: $lineWidth $lineStyle $lineColor;
+
+  &.light {
+    border-color: rgba( white, .145 );
+  }
+  &.dark {
+    border-color: rgba( black, .1 );
+  }
 }
 
 // original headings
@@ -42,8 +49,6 @@ h6 { font-size: 100%; }
 .heading {
   display: block;
   overflow: visible !important;
-  margin: 0 0 $padSpace 0;
-  padding: 0;
   line-height: 1em;
 }
 

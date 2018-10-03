@@ -1,5 +1,5 @@
 // height of topbar
-$topbarHeight: 4em;
+$topbarHeight: 3em;
 
 // spacing and padding
 $padSpace: 1em;
@@ -9,9 +9,9 @@ $listSpace: 0.4em;
 
 // borders and lines
 $lineWidth: 2px;
-$lineStyle: solid;
-$lineColor: rgba( 255, 255, 255, 0.04 );
-$lineJoin: 3px;
+$lineStyle: dashed;
+$lineColor: rgba( 255, 255, 255, 0.065 );
+$lineJoin: 4px;
 
 // common border styles
 $borderDefault: $lineWidth $lineStyle $lineColor;
@@ -24,9 +24,11 @@ $zindexModals: 8888;
 $zindexAlerts: 9999;
 
 // base font options
-$fontSize: 20px;
-$fontFamily: 'Capriola', 'Helvetica', 'Arial', sans-serif;
+$fontFamily: 'Acme', 'Capriola', 'Helvetica', 'Arial', sans-serif;
 $fontFixed: Consolas, "Andale Mono", Monaco, "Courier New", monospace;
+$fontSize: 22px;
+$fontSpace: 1.5em;
+$fontWeight: 400;
 
 // document colors
 $colorDocument: #24293f;

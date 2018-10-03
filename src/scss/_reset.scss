@@ -18,7 +18,6 @@
   -moz-osx-font-smoothing: grayscale;
   transform-style: flat;
   transition:
-    color $fxSpeed $fxEase,
     border-color $fxSpeed $fxEase,
     background-color $fxSpeed $fxEase,
     opacity $fxSpeed $fxEase,
@@ -52,7 +51,8 @@ body {
   font-family: $fontFamily;
   font-weight: normal;
   font-size: calc( #{$fontSize} - 4px );
-  line-height: 1.6em;
+  font-weight: $fontWeight;
+  line-height: $fontSpace;
   background-color: $colorDocument;
   color: $colorDocumentText;
 

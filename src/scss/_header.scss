@@ -7,16 +7,14 @@
   left: 0;
   right: 0;
   top: 0;
-  background-color: rgba( $colorDocument, 0.2 );
-  border-bottom: $lineWidth $lineStyle $colorSecondary;
+  background-color: rgba( $colorDocument, 0.5 );
   color: $colorDocumentText;
+  box-shadow: $shadowBold;
   z-index: $zindexElements;
 
   // change from transparent to solid
   &.solid {
     background-color: $colorDocument;
-    border-color: rgba(0,0,0,0);
-    box-shadow: $shadowBold;
   }
 
   // slide up and out of view
@@ -33,8 +31,8 @@
       img {
         display: block;
         margin: 0 5px 0 0;
-        width: calc( #{$topbarHeight} - 20px );
-        height: calc( #{$topbarHeight} - 20px );
+        width: calc( #{$topbarHeight} - 1em );
+        height: calc( #{$topbarHeight} - 1em );
         border-radius: 100px;
       }
     }
@@ -42,7 +40,6 @@
     // logo link
     .header-logo {
       font-size: 140%;
-      font-weight: bold;
       line-height: 1em;
       text-transform: uppercase;
       letter-spacing: -2px;
@@ -51,6 +48,7 @@
 
       a, b, span, button {
         font-size: inherit;
+        font-weight: inherit;
         text-transform: inherit;
         color: inherit;
       }
