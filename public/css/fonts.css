@@ -1,13 +1,13 @@
 /**
  * Font files
  */
-@font-face {
+/* @font-face {
   font-family: 'Capriola';
   font-display: swap;
   font-style: normal;
   font-weight: 400;
   src: url( '../fonts/capriola.ttf' ) format( 'truetype' );
-}
+} */
 @font-face {
   font-family: 'fontello';
   font-display: swap;
