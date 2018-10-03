@@ -28,15 +28,12 @@ const buildSlide = ( pen ) => {
         </a>
       </div>
       <div class="flex-grid-item flex-60">
-        <h3 class="fx-on fx-fade-in fx-delay-1">${ pen.title }</h3>
-        <div class="text-faded pad-bottom pad-top">
+        <h3 class="heading fx-on fx-fade-in fx-delay-1">${ pen.title }</h3>
+        <div class="text-grey pad-bottom pad-top">
           <span class="icon-visible iconLeft">${ penViews }</span> &nbsp;
           <span class="icon-heart iconLeft">${ penLikes }</span> &nbsp;
         </div>
-        <div class="text-grey pad-bottom fx-on fx-fade-in fx-delay-2">${ pen.details }</div>
-        <div class="text-clip pad-bottom fx-on fx-fade-in fx-delay-3">
-          <a href="${ penUrl }" target="_blank">${ penUrl }</a>
-        </div>
+        <div class="pad-bottom fx-on fx-fade-in fx-delay-2">${ pen.details }</div>
         <div class="fx-on fx-fade-in fx-delay-4">
           <a class="form-btn bg-secondary-hover icon-ghub iconLeft" href="${ penUrl }" target="_blank">View Project</a>
         </div>

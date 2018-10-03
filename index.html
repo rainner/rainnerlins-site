@@ -65,7 +65,7 @@
               <a class="logo-link" href="/">Rainner<span>Lins</span></a>
             </div>
             <div class="header-menu dropdown-menu">
-              <button class="dropdown-trigger icon-menu clickable"></button>
+              <button class="dropdown-trigger icon-menu text-bright-hover clickable"></button>
               <div class="dropdown-content">
                 <ul class="dropdown-list">
                   <li class="title">Internal</li>
@@ -89,9 +89,9 @@
       <section id="hero" class="hero-wrap bg-img bg-img-fixed" style="background-image: url( 'public/images/hero-bg.jpg' );">
         <div class="container">
           <div class="hero-content text-center">
-            <h1 class="hero-title">Web Developer</h1>
+            <h1 class="hero-title heading">Web Developer</h1>
             <hr class="light" />
-            <p class="hero-info">Hello, my name is Rainner. I'm a programmer and user-interface developer who builds things for use on the world-wide-web, also known as a web developer.</p>
+            <div class="hero-info">Hello, my name is Rainner. I'm a programmer and user-interface developer who builds things for use on the world-wide-web, also known as a web developer.</div>
             <hr class="light" />
             <button class="form-btn bg-secondary-hover text-nowrap" data-scroll="#services">&nbsp; <i class="icon-down-open"></i> &nbsp; Explore &nbsp;</button>
           </div>
@@ -128,14 +128,14 @@
             </div>
           </div>
           <ul class="services-tips">
-            <li class="icon-laptop iconTop iconLarge iconBright text-grey">
-              Single apps that are responsive and work across many devices and platforms.
+            <li class="icon-laptop iconTop iconLarge iconBright">
+              <span class="text-grey">Single apps that are responsive and work across many devices and platforms.</span>
             </li>
-            <li class="icon-gauge iconTop iconLarge iconBright text-grey">
-              Lightweight and highly optimized apps that load fast and work fast on all devices.
+            <li class="icon-gauge iconTop iconLarge iconBright">
+              <span class="text-grey">Lightweight and highly optimized apps that load fast and work fast on all devices.</span>
             </li>
-            <li class="icon-search iconTop iconLarge iconBright text-grey">
-              Search optimized apps that get a higher grade by popular search engines.
+            <li class="icon-search iconTop iconLarge iconBright">
+              <span class="text-grey">Search optimized apps that get a higher grade by popular search engines.</span>
             </li>
           </ul>
         </div>
@@ -186,16 +186,18 @@
       <!-- projects section -->
       <section id="projects" class="projects-wrap content-wrap content-skew">
         <div class="container">
+          <!-- github api data -->
           <div class="push-bottom">
-            <div class="flex-row flex-bottom flex-space push-bottom">
+            <div class="flex-row flex-middle flex-space">
               <div>
                 <h2 class="heading">Github Projects</h2>
-                <span class="text-grey">List of pinned projects from my Github profile.</span>
+                <span class="text-small text-grey">List of pinned projects from my <a href="#" data-action="go:github">Github</a> profile.</span>
               </div>
-              <div class="pad-left">
-                <a class="form-btn bg-secondary-hover icon-ghub iconLeft" href="#" data-action="go:github">Github Profile</a>
+              <div class="pad-left if-medium">
+                <a class="form-btn bg-grey-hover text-nowrap icon-ghub iconLeft" href="#" data-action="go:github">Github Profile</a>
               </div>
             </div>
+            <hr />
             <div id="github-loader" class="loader"></div>
             <div id="github-projects" class="slideshow-wrap hidden">
               <div class="slideshow-back"></div>
@@ -204,17 +206,18 @@
               <div class="slideshow-list"></div>
             </div>
           </div>
-          <hr />
+          <!-- codepen api data -->
           <div class="push-bottom">
-            <div class="flex-row flex-bottom flex-space push-bottom">
+            <div class="flex-row flex-middle flex-space">
               <div>
                 <h2 class="heading">Codepen Projects</h2>
-                <span class="text-grey">List of pinned projects from my Codepen profile.</span>
+                <span class="text-small text-grey">List of pinned projects from my <a href="#" data-action="go:codepen">Codepen</a> profile.</span>
               </div>
-              <div class="pad-left">
-                <a class="form-btn bg-secondary-hover icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen Profile</a>
+              <div class="pad-left if-medium">
+                <a class="form-btn bg-grey-hover text-nowrap icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen Profile</a>
               </div>
             </div>
+            <hr />
             <div id="codepen-loader" class="loader"></div>
             <div id="codepen-projects" class="slideshow-wrap hidden">
               <div class="slideshow-back"></div>
@@ -295,9 +298,13 @@
 
           <!-- bottom spacer -->
           <div class="push-bottom text-center">
-            <span class="text-faded text-smaller">&copy; All Rights Reserved - Rainner Lins.</span> <br />
-            <span class="text-grey text-smaller">Interested in how this site works? You can view the source code on <a class="icon-ghub" href="https://github.com/rainner/rainnerlins-site">&nbsp;Github</a>.</span> <br />
-            <span class="text-smaller"> I accept crypto: &nbsp; <span id="crytolinks"></span></span>
+            <div class="flex-row flex-middle flex-center">
+              <span>I accept crypto &nbsp;</span>
+              <span id="crytolinks"></span>
+            </div>
+            <div class="text-grey text-smaller">
+              &copy; All Rights Reserved - Rainner Lins.
+            </div>
           </div>
 
         </div>

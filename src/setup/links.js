@@ -64,7 +64,7 @@ const setupCryptoLinks = ( data ) => {
     let link = document.createElement( 'a' );
 
     link.textContent = symbol;
-    link.setAttribute( 'class', 'pill bg-info-hover' );
+    link.setAttribute( 'class', 'pill bg-grey-hover' );
     link.setAttribute( 'title', 'Copy address' );
     link.setAttribute( 'href', '#' );
     link.addEventListener( 'click', e => {
