@@ -7,7 +7,6 @@
   text-align: center;
   min-height: 100vh;
   background-color: darken( $colorDocument, 10% );
-  color: $colorDocumentText;
 
   .container {
     position: absolute;
@@ -29,7 +28,7 @@
     }
     .hero-info {
       font-size: 120%;
-      color: darken( $colorDocumentText, 12% );
+      line-height: normal;
       text-shadow: $shadowText;
     }
 

@@ -16,8 +16,8 @@
 
   .modal-container {
     margin: $padSpace;
-    color: $colorDocument;
-    background-color: $colorDocumentText;
+    color: $colorDocumentText;
+    background-color: $colorDocument;
     border-radius: $lineJoin;
     @include borderAccent;
     box-shadow: $shadowBold;
@@ -34,7 +34,7 @@
       align-items: center;
       justify-content: stretch;
       padding: $padSpace;
-      border-bottom: $lineWidth $lineStyle rgba( 0, 0, 0, 0.1 );
+      border-bottom: $lineWidth $lineStyle $lineColor;
 
       .modal-title, .modal-close {
         display: inline-block;

@@ -26,13 +26,13 @@ $zindexAlerts: 9999;
 // base font options
 $fontFamily: 'Acme', 'Capriola', 'Helvetica', 'Arial', sans-serif;
 $fontFixed: Consolas, "Andale Mono", Monaco, "Courier New", monospace;
-$fontSize: 22px;
-$fontSpace: 1.5em;
+$fontSize: 24px;
+$fontSpace: 1.3em;
 $fontWeight: 400;
 
 // document colors
 $colorDocument: #24293f;
-$colorDocumentText: #e0e8ec;
+$colorDocumentText: desaturate( lighten( $colorDocument, 50% ), 18% );
 
 // input colors
 $colorInput: #f0f0f0;
@@ -67,8 +67,8 @@ $colorInfo: #29567b;
 $colorInfoText: lighten( $colorInfo, 50% );
 
 // grey colors
-$colorGrey: darken( $colorDocumentText, 20% );
-$colorGreyText: darken( $colorGrey, 40% );
+$colorGrey: darken( $colorDocumentText, 30% );
+$colorGreyText: darken( $colorGrey, 25% );
 
 // bright colors
 $colorBright: #ffffff;

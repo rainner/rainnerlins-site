@@ -29,21 +29,13 @@ ul.checklist {
   & > li {
     display: block;
     position: relative;
-    margin: 0 0 0 $padSpace;
-    padding: ( $padSpace / 2 ) 0 ( $padSpace / 2 ) 1.8em;
-    font-size: 90%;
-    line-height: 1.2em;
-    color: darken( $colorDocumentText, 20% );
+    margin: 0 0 ( $padSpace * .4 ) 0;
 
     &:before {
-      display: inline-block;
-      position: absolute;
-      left: 0;
-      top: .4em;
       font-size: 120%;
+      margin: 0 .5em 0 0;
       line-height: 1em;
-      color: desaturate( $colorSecondary, 10% );
-      opacity: 1;
+      color: $colorSecondary;
     }
   }
 }
@@ -52,10 +44,9 @@ ul.checklist {
 .pill {
   display: inline-block;
   overflow: hidden;
-  margin: 0 5px 0 0;
-  padding: 0 1em;
-  font-size: 90%;
-  line-height: 1.6em;
+  margin: 0 2px;
+  padding: .1em .5em;
+  line-height: inherit;
   vertical-align: middle;
   color: $colorDocument;
   background-color: $colorDocumentText;
@@ -70,7 +61,8 @@ ul.checklist {
   .qr-image {
     margin: 0 auto 1em auto;
     overflow: hidden;
-    border-radius: 100px;
+    border-radius: $lineJoin;
+    box-shadow: $shadowPaper;
   }
 
   .qr-info {
@@ -84,9 +76,9 @@ ul.checklist {
     white-space: nowrap;
     line-height: 1.2em;
     padding: .5em;
-    color: #000;
-    background-color: rgba( 0, 0, 0, 0.05 );
-    border: $lineWidth $lineStyle rgba( 0, 0, 0, 0.1 );
+    color: $colorDocumentText;
+    background-color: darken( $colorDocument, 20% );
+    border: $lineWidth $lineStyle $lineColor;
     border-radius: 100px;
   }
 }
@@ -156,5 +148,25 @@ ul.checklist {
 }
 .border-all {
   border: $lineWidth $lineStyle $lineColor;
+}
+
+// media query helpers
+.if-small {
+  display: none;
+  @media #{$screenSmall} {
+    display: initial;
+  }
+}
+.if-medium {
+  display: none;
+  @media #{$screenMedium} {
+    display: initial;
+  }
+}
+.if-large {
+  display: none;
+  @media #{$screenLarge} {
+    display: initial;
+  }
 }
 

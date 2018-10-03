@@ -8,7 +8,6 @@
   right: 0;
   top: 0;
   background-color: rgba( $colorDocument, 0.5 );
-  color: $colorDocumentText;
   box-shadow: $shadowBold;
   z-index: $zindexElements;
 
@@ -20,7 +19,6 @@
   // slide up and out of view
   &.hidden {
     transform: translateY( calc( -10px - #{$topbarHeight} ) );
-    // top: calc( -10px - #{$topbarHeight} );
   }
 
   .header-row {
@@ -43,8 +41,7 @@
       line-height: 1em;
       text-transform: uppercase;
       letter-spacing: -2px;
-      color: darken( $colorDocumentText, 30% );
-      text-shadow: $shadowText;
+      color: darken( $colorBright, 20% );
 
       a, b, span, button {
         font-size: inherit;
@@ -52,8 +49,7 @@
         text-transform: inherit;
         color: inherit;
       }
-      a > b,
-      a > span {
+      b, span {
         color: $colorSecondary;
       }
     }
