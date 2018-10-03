@@ -9,7 +9,7 @@ export default class Ajax {
 
     this._options = Object.assign( {
       // custom request headers object
-      headers : { 'Accept': 'application/json, text/plain, text/html, */*' },
+      headers : {},
       // xhr expected response type from server
       type : '',
       // xhr timeout value (default: 10s)
@@ -273,7 +273,6 @@ export default class Ajax {
 
     // init request
     this._xhr.open( this._method, this._endpoint, true );
-    this._setHeader( 'X-Requested-With', 'XMLHttpRequest' );
 
     // set expected response type based on request method
     switch ( this._method ) {

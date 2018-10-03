@@ -12,8 +12,8 @@ import Utils from '../modules/Utils';
 const jsonEndpoint = 'public/static/profile.json';
 
 // init loader
-const loader = Loader( '#projects-loader' );
-loader.show( 'Loading list of projects...' );
+const loader = Loader( '#github-loader' );
+loader.show( 'Loading projects from Github...' );
 
 // query data
 const graphQlQuery = {
@@ -64,14 +64,14 @@ const buildSlide = ( repo ) => {
     <div class="flex-grid flex-top">
       <div class="flex-grid-item flex-40">
         <a href="${ repo.url }" target="_blank">
-          <img class="fx-on fx-drop-in" src="${ thumbTmp }" data-image="${ thumbUrl }" width="100%" alt="${ repo.name }" />
+          <img class="fx-on fx-drop-in thumb" src="${ thumbTmp }" data-image="${ thumbUrl }" width="100%" alt="${ repo.name }" />
         </a>
       </div>
       <div class="flex-grid-item flex-60">
         <h3 class="text-uppercase fx-on fx-fade-in fx-delay-1">${ repo.name }</h3>
-        <div class="text-smaller text-faded pad-bottom pad-top icon-clock iconLeft">Last updated &nbsp; ${ pushDate }</div>
-        <div class="text-small text-grey pad-bottom fx-on fx-fade-in fx-delay-2">${ repo.description }</div>
-        <div class="text-small text-clip pad-bottom fx-on fx-fade-in fx-delay-3">
+        <div class="text-faded pad-bottom pad-top icon-clock iconLeft">Last updated &nbsp; ${ pushDate }</div>
+        <div class="text-grey pad-bottom fx-on fx-fade-in fx-delay-2">${ repo.description }</div>
+        <div class="text-clip pad-bottom fx-on fx-fade-in fx-delay-3">
           <a href="${ repo.url }" target="_blank">${ repo.url }</a>
         </div>
         <div class="fx-on fx-fade-in fx-delay-4">
@@ -85,17 +85,19 @@ const buildSlide = ( repo ) => {
 
 // build slideshow containers from list of repos
 const buildSlideshow = ( repos ) => {
-  let target = document.querySelector( '#projects-slideshow' );
+  let target = document.querySelector( '#github-projects' );
   let list   = target ? target.querySelector( '.slideshow-list' ) : null;
   let html   = '';
 
-  if ( repos && target && list ) {
-    for ( let i = 0; i < repos.length; ++i ) {
-      html += buildSlide( repos[ i ].node );
-    }
+  if ( !repos || !target || !list ) {
+    return console.warn( 'Could not build Github projects slideshow. API or DOM related error.' );
+  }
+  for ( let i = 0; i < repos.length; ++i ) {
+    html += buildSlide( repos[ i ].node );
   }
   list.innerHTML = html;
   new Slideshow( target );
+  window.setupImages();
 };
 
 // load user data from json file
