@@ -6,7 +6,8 @@ import Loader from '../modules/Loader';
 import Slideshow from '../modules/Slideshow';
 
 // codepen profile data api endpoint
-const apiEndpoint = 'https://cpv2api.com/pens/showcase/rainner';
+const apiEndpoint = 'https://rainner.herokuapp.com/codepen';
+// const apiEndpoint = 'http://localhost:8080/codepen';
 
 // init loader
 const loader = Loader( '#codepen-loader' );
@@ -14,28 +15,25 @@ loader.show( 'Loading projects from Codepen...' );
 
 // build single slide for a repo
 const buildSlide = ( pen ) => {
-  let thumbTmp = `public/images/thumb.svg`;
-  let thumbUrl = ( String( pen.images.small || '' ) || thumbTmp ).replace( /http\:/g, 'https:' );
-  let penUrl   = `https://codepen.io/rainner/full/${ pen.id }/`;
-  let penViews = String( pen.views || '' ).replace( /[^\d\,]+/g, '' ) + ' Views';
-  let penLikes = String( pen.loves || '' ).replace( /[^\d\,]+/g, '' ) + ' Likes';
+  let thumb = `public/images/thumb.svg`;
+  let { url, image, title, info, views, replies, likes } = pen;
   return `
   <div class="slideshow-item hidden">
     <div class="flex-grid flex-top">
       <div class="flex-grid-item flex-40">
-        <a href="${ penUrl }" target="_blank">
-          <img class="fx-on fx-drop-in thumb" src="${ thumbTmp }" data-image="${ thumbUrl }" width="100%" alt="${ pen.title }" />
+        <a href="${ url }" target="_blank">
+          <img class="fx-on fx-drop-in thumb" src="${ thumb }" data-image="${ image }" width="100%" alt="${ title }" />
         </a>
       </div>
       <div class="flex-grid-item flex-60">
-        <h3 class="heading fx-on fx-fade-in fx-delay-1">${ pen.title }</h3>
+        <h3 class="heading fx-on fx-fade-in fx-delay-1">${ title }</h3>
         <div class="text-grey pad-bottom pad-top">
-          <span class="icon-visible iconLeft">${ penViews }</span> &nbsp;
-          <span class="icon-heart iconLeft">${ penLikes }</span> &nbsp;
+          <span class="icon-visible iconLeft">${ views }</span> &nbsp;
+          <span class="icon-heart iconLeft">${ likes }</span> &nbsp;
         </div>
-        <div class="pad-bottom fx-on fx-fade-in fx-delay-2">${ pen.details }</div>
+        <div class="pad-bottom fx-on fx-fade-in fx-delay-2">${ info }</div>
         <div class="fx-on fx-fade-in fx-delay-4">
-          <a class="form-btn bg-secondary-hover icon-ghub iconLeft" href="${ penUrl }" target="_blank">View Project</a>
+          <a class="form-btn bg-secondary-hover icon-ghub iconLeft" href="${ url }" target="_blank">View Project</a>
         </div>
       </div>
     </div>
@@ -66,11 +64,11 @@ const loadCodepenData = () => {
     type: 'json',
     complete: ( xhr, response ) => {
       // something went wrong...
-      if ( !response || !response.data || response.error ) {
+      if ( !response || response.error ) {
         return loader.error( 'Status '+ xhr.status +' : Could not load projects, try again later.' );
       }
       loader.hide();
-      buildSlideshow( response.data );
+      buildSlideshow( response );
     },
   });
 };
