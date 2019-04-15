@@ -11,7 +11,6 @@ const devServer = {
 };
 
 module.exports = {
-  devtool: '#eval-source-map',
   entry: {
     app: './src/app.js',
   },
@@ -67,21 +66,9 @@ module.exports = {
 }
 
 if ( isProd ) {
-  // module.exports.devtool = '#source-map'
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
+  module.exports.plugins = ( module.exports.plugins || [] ).concat( [
+    new webpack.DefinePlugin( { 'process.env': { NODE_ENV: '"production"' } } ),
+    new webpack.optimize.UglifyJsPlugin( { sourceMap: false, compress: { warnings: false } } ),
+    new webpack.LoaderOptionsPlugin( { minimize: true } )
+  ]);
 }
