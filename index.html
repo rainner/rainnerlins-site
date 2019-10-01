@@ -36,6 +36,15 @@
     <link rel="stylesheet" href="public/bundles/app.min.css" />
     <link rel="shortcut icon" href="favicon.ico" />
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-854018-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-854018-2');
+    </script>
+
   </head>
   <body id="doc">
 
@@ -143,7 +152,6 @@
 
       <!-- content section -->
       <section id="technologies" class="techlist-wrap content-wrap content-dark bg-img bg-img-bottom bg-img-fixed" data-image="public/images/techlist-bg.jpg">
-
         <div class="container">
           <h2 class="heading">Technologies</h2>
           <div class="pad-top">List of commonly used tools and technologies that help me get the job done.</div>
@@ -207,25 +215,21 @@
             </div>
           </div>
           <!-- codepen api data -->
-          <div class="push-bottom">
+          <hr />
+          <div>
             <div class="flex-row flex-middle flex-space">
               <div>
                 <h2 class="heading">Codepen Projects</h2>
-                <span class="text-small text-grey">List of pinned projects from my <a href="#" data-action="go:codepen">Codepen</a> profile.</span>
               </div>
-              <div class="pad-left if-medium">
-                <a class="form-btn bg-grey-hover text-nowrap icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen Profile</a>
+              <div class="pad-left">
+                <a class="form-btn bg-grey-hover text-nowrap icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen</a>
               </div>
             </div>
-            <hr />
-            <div id="codepen-loader" class="loader"></div>
-            <div id="codepen-projects" class="slideshow-wrap hidden">
-              <div class="slideshow-back"></div>
-              <div class="slideshow-next"></div>
-              <div class="slideshow-nav"></div>
-              <div class="slideshow-list"></div>
+            <div class="pad-top">
+              Codepen.io is an online code editor for developers that allows you to write code in the browser, and see the results of it as you build.
+              I use Codepen as a place to create and host some basic development projects that shows my skills with web-stack technologies. Check out my
+              <a href="#" data-action="go:codepen">Codepen</a> profile to see some of my projects.
             </div>
-          </div>
         </div>
       </section>
 
