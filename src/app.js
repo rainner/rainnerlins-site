@@ -4,7 +4,7 @@
 import './scss/app.scss';
 import './modules/Polyfills';
 import './setup/github';
-import './setup/codepen';
+// import './setup/codepen';
 import './setup/links';
 import './setup/contact';
 import './setup/images';
