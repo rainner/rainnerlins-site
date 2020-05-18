@@ -26,9 +26,9 @@ const graphQlQuery = {
         bio,
         avatarUrl,
         url,
-        pinnedRepositories( first: 10 ) {
-          edges {
-            node {
+        pinnedItems( first: 10 ) {
+          nodes {
+            ... on Repository {
               id,
               name,
               nameWithOwner,
@@ -90,7 +90,7 @@ const buildSlideshow = ( repos ) => {
     return console.warn( 'Could not build Github projects slideshow. API or DOM related error.' );
   }
   for ( let i = 0; i < repos.length; ++i ) {
-    html += buildSlide( repos[ i ].node );
+    html += buildSlide( repos[ i ] );
   }
   list.innerHTML = html;
   new Slideshow( target );
@@ -125,7 +125,7 @@ const loadGithubData = () => {
       }
       loader.hide();
       updateUserData( response.data.user );
-      buildSlideshow( response.data.user.pinnedRepositories.edges );
+      buildSlideshow( response.data.user.pinnedItems.nodes );
     },
   });
 };
