@@ -52,7 +52,8 @@ body {
   font-weight: normal;
   font-size: calc( #{$fontSize} - 4px );
   font-weight: $fontWeight;
-  line-height: $fontSpace;
+  line-height: $fontHeight;
+  letter-spacing: $fontSpace;
   background-color: $colorDocument;
   color: $colorDocumentText;
 

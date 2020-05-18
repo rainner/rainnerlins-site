@@ -24,10 +24,11 @@ $zindexModals: 8888;
 $zindexAlerts: 9999;
 
 // base font options
-$fontFamily: 'Acme', 'Capriola', 'Helvetica', 'Arial', sans-serif;
-$fontFixed: Consolas, "Andale Mono", Monaco, "Courier New", monospace;
+$fontFamily: 'Acme', Helvetica, Arial, sans-serif;
+$fontFixed: Monaco, monospace;
 $fontSize: 24px;
-$fontSpace: 1.3em;
+$fontHeight: 1.3em;
+$fontSpace: 0;
 $fontWeight: 400;
 
 // document colors
