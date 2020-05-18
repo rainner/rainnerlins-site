@@ -31,10 +31,10 @@
     </style>
 
     <!-- app icon and styles -->
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Acme" />
-    <link rel="stylesheet" href="public/css/fonts.css" />
-    <link rel="stylesheet" href="public/bundles/app.min.css" />
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet" />
+    <link href="public/css/fonts.css" rel="stylesheet" />
+    <link href="public/bundles/app.min.css" rel="stylesheet" />
+    <link href="favicon.ico"  rel="shortcut icon"/>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-854018-2"></script>
@@ -110,27 +110,21 @@
       <!-- content section -->
       <section id="services" class="services-wrap content-wrap content-skew">
         <div class="container">
-          <h2 class="heading">Services</h2>
-          <div class="pad-top">
-            I know a thing or two about building websites and server-side applications.
-            Been doing it for over 10 years and have picked up a few skills along the way.
-            If you need someone to help you get your idea off the ground, or to help you add to, or modify
-            an existing project, I may be able to help...
-          </div>
+          <h2 class="heading">Some of the things I work with</h2>
           <hr />
-          <div class="flex-grid flex-top">
+          <div class="flex-grid flex-top pad-top">
             <div class="flex-grid-item flex-50">
               <img class="fx-on fx-drop-in" src="public/images/thumb.svg" data-image="public/images/editor.png" width="100%" alt="Services" />
             </div>
             <div class="flex-grid-item flex-50">
               <ul class="checklist pad-bottom">
-                <li class="icon-photoshop">Static design, layouts, mockups.</li>
-                <li class="icon-search">Search optimization, performance.</li>
-                <li class="icon-mouse">User insterface, back-end console.</li>
-                <li class="icon-puzzle">Theme modification, custom addon.</li>
-                <li class="icon-basket">Third-party API integration.</li>
-                <li class="icon-javascript">Reactive single-page web application.</li>
-                <li class="icon-server">Server-side application, CMS, frameworks.</li>
+                <li class="icon-photoshop">Static design to HTML conversion.</li>
+                <li class="icon-javascript">Front-end site and app development.</li>
+                <li class="icon-server">Server-side Node.js and PHP development.</li>
+                <li class="icon-puzzle">Custom theme development and addons.</li>
+                <li class="icon-basket">Third-party service API integration.</li>
+                <li class="icon-database">Database setup, backs and caching.</li>
+                <li class="icon-search">Search optimization and performance.</li>
                 <li class="icon-network">Hosting, e-mail, domain &amp; DNS.</li>
                 <li class="icon-code">Something else? &nbsp; <a class="icon-mail iconLeft" href="#" data-scroll="#contact">Contact me</a></li>
               </ul>
@@ -138,13 +132,16 @@
           </div>
           <ul class="services-tips">
             <li class="icon-laptop iconTop iconLarge iconBright">
-              <span class="text-grey">Single apps that are responsive and work across many devices and platforms.</span>
+              <h3 class="heading">Support</h3>
+              <div class="text-grey text-small pad-top">Single apps that are responsive and work across many devices and platforms.</div>
             </li>
             <li class="icon-gauge iconTop iconLarge iconBright">
-              <span class="text-grey">Lightweight and highly optimized apps that load fast and work fast on all devices.</span>
+              <h3 class="heading">Speed</h3>
+              <div class="text-grey text-small pad-top">Lightweight and highly optimized apps that load fast and work fast on all devices.</div>
             </li>
             <li class="icon-search iconTop iconLarge iconBright">
-              <span class="text-grey">Search optimized apps that get a higher grade by popular search engines.</span>
+              <h3 class="heading">Search</h3>
+              <div class="text-grey text-small pad-top">Search optimized apps that get a higher grade by popular search engines.</div>
             </li>
           </ul>
         </div>
@@ -167,8 +164,6 @@
             <a class="icon-php iconTop iconMedium" href="https://secure.php.net/" target="_blank">PHP</a>
             <a class="icon-mysql iconTop iconMedium" href="https://www.mysql.com/" target="_blank">MySQL</a>
             <a class="icon-jquery iconTop iconMedium" href="https://jquery.com/" target="_blank">jQuery</a>
-            <a class="icon-react iconTop iconMedium" href="https://reactjs.org/" target="_blank">React</a>
-            <a class="icon-angular iconTop iconMedium" href="https://angular.io/" target="_blank">Angular</a>
             <a class="icon-vue iconTop iconMedium" href="https://vuejs.org/" target="_blank">Vue</a>
             <a class="icon-ghub iconTop iconMedium" href="https://github.com/" target="_blank">Github</a>
           </div>
@@ -198,11 +193,11 @@
           <div class="push-bottom">
             <div class="flex-row flex-middle flex-space">
               <div>
-                <h2 class="heading">Github Projects</h2>
-                <span class="text-small text-grey">List of pinned projects from my <a href="#" data-action="go:github">Github</a> profile.</span>
+                <h2 class="heading">Github Repos</h2>
+                <span class="text-small text-grey">List of my pinned repositories from my <a href="#" data-action="go:github">Github</a> profile.</span>
               </div>
               <div class="pad-left if-medium">
-                <a class="form-btn bg-grey-hover text-nowrap icon-ghub iconLeft" href="#" data-action="go:github">Github Profile</a>
+                <a class="form-btn bg-grey-hover text-nowrap icon-ghub iconLeft" href="#" data-action="go:github">View on Github</a>
               </div>
             </div>
             <hr />
@@ -222,13 +217,12 @@
                 <h2 class="heading">Codepen Projects</h2>
               </div>
               <div class="pad-left">
-                <a class="form-btn bg-grey-hover text-nowrap icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen</a>
+                <a class="form-btn bg-grey-hover text-nowrap icon-codepen iconLeft" href="#" data-action="go:codepen">Codepen Profile</a>
               </div>
             </div>
             <div class="pad-top">
-              Codepen.io is an online code editor for developers that allows you to write code in the browser, and see the results of it as you build.
-              I use Codepen as a place to create and host some basic development projects that shows my skills with web-stack technologies. Check out my
-              <a href="#" data-action="go:codepen">Codepen</a> profile to see some of my projects.
+              Codepen.io is an online code editor for developers that allows you to write code in the browser and have be shared by others on the web.
+              Check out my <a href="#" data-action="go:codepen">Codepen profile</a> to see some of my projects.
             </div>
         </div>
       </section>
@@ -266,7 +260,6 @@
                 <a class="text-clip icon-instag iconLeft" href="#" data-action="go:instagram">instagram.com</a> <br />
                 <a class="text-clip icon-codepen iconLeft" href="#" data-action="go:codepen">codepen.io</a> <br />
                 <a class="text-clip icon-paypal iconLeft" href="#" data-action="go:paypal">paypal.me</a> <br />
-                <a class="text-clip icon-comment iconLeft" href="#" data-action="go:earn">earn.com</a>
               </div>
             </div>
             <!-- contact form -->
@@ -295,19 +288,6 @@
                   </button>
                 </div>
               </form>
-            </div>
-          </div>
-
-          <hr />
-
-          <!-- bottom spacer -->
-          <div class="push-bottom text-center">
-            <div class="flex-row flex-middle flex-center">
-              <span>I accept crypto &nbsp;</span>
-              <span id="crytolinks"></span>
-            </div>
-            <div class="text-grey text-smaller">
-              &copy; All Rights Reserved - Rainner Lins.
             </div>
           </div>
 
